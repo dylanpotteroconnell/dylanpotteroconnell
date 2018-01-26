@@ -4,12 +4,9 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
+Sometimes I will randomly decide to record a small project I'm working on, and I figured I'd store it here. This is meant to stay on an ultra introductory level, so it might be of use to anyone who happens to be trying to learn something similar.
 
-### More Information
-
-A place to include any other types of information that you'd like to include about yourself.
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+[dylan.oconnell@yale.edu](mailto:dylan.oconnell@yale.edu)
