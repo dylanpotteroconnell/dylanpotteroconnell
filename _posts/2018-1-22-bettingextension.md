@@ -3,59 +3,58 @@ layout: post
 title: Google Extension for Converting Odds 
 ---
 
+The same betting odds are often displayed in disparate ways, depending on the context. In America, normally in terms of a Moneyline, where +200 is shorthand for "if you bet $100, you can win an additional $200". In other contexts, we generally see the tradition "X/Y" fractional odds. Both of these have clear mathematical meanings, but for inexperienced bettors, they tend to be poor conveyors of intuitive meaning. We can quickly estimate what "+350" implies, but for most people, it takes a mental calculation to do so. The most useful intuitive information about betting odds comes from the "Implied Probability", which is the probability of the event necessary for you to "break even" on the bet. Betting sites don't particularly like Implied Probability because it makes the cut they take more obvious (when mutually exclusive and complete events have probabilities that sum up to greater than one), and more intuitively accurate information for bettors can make them realize how daunting it is to actually keep up a positive expected value.
 
+As someone without the perfect intuition needed to convert these odds in my head, I got tired of glancing at a table of odds and trying to work out their precise value one by one. I thought it would be nice to have a very simple Google Chrome extension that could do it for me. The initial functionality is simple: click on the icon, and it converts any odds it can find on the page into Implied Probability. Click on it again, and it converts back. The challenge is that I have zero knowledge of JavaScript. Luckily, this task was simple enough that it could be cobbled together in the style of Frankenstein's monster, with some slight modifications.
 
-We want to be able to activate the extension when someone clicks on the icon. 
-
-https://stackoverflow.com/questions/7168362/run-script-each-time-chrome-extension-icon-clicked
-
-We use this manifest.json
+The first feature necessary is simple an extension that runs a script when the icon is clicked. We find a [Stack Overflow question](https://stackoverflow.com/questions/7168362/run-script-each-time-chrome-extension-icon-clicked) (which will be the source of the code for most of the extension) with this very task. Every Chrome Extension begins with a manifest.json file, which gives an overview of the permissions and structure of the extension. I grab their initial suggested manifest.json, and make a number of modifications which will become necessary later. The "contextmenus" under permissions is only necessary to activate context menus within Chrome, which seems like a useful feature but is not yet crucial to the Extension's functionality. I also made a set of three simple icons in GIMP, so that it looks natural in the browser. The key parts here are the two scripts under "background". "rightclick.js" provides instructions for how to create a context menu upon right click, which we ignore for now (I played with it, but it's still a work in progress). However, "background.js" is the script that tells our  
 
 ~~~~
+
 {
   "manifest_version": 2,
 
-  "name": "Getting started example",
-  "description": "This extension allows the user to change the background color of the current page.",
+  "name": "Convert Odds into Implied Probability",
+  "description": "Click this icon to convert moneyline odds into implied probability, and vice versa.",
   "version": "1.0",
   "background" : {
-    "scripts" : ["background.js"]
+    "scripts" : ["background.js", "rightclick.js"]
   },
+  "icons": { "16": "icon16.png",
+             "48": "icon48.png",
+             "128": "icon128.png" },
 
   "browser_action": {
-    "default_icon": "icon.png",
+    "default_icon": "icon48.png",
     "default_title": "Convert Odds"
   },
   "permissions": [
-    "activeTab"
+    "activeTab",
+    "contextMenus"
   ]
 }
-
 ~~~~
 
-And this background.js, which calls the testScript.js script
+The key parts here are the two scripts under "background": "rightclick.js" provides instructions for how to create a context menu upon right click, which we ignore for now (I played with it, but it's still a work in progress), and "background.js" is a script that calls our text replace script when the Extension icon is clicked. 
+
 ~~~~
 chrome.browserAction.onClicked.addListener(function(tab) {
-   chrome.tabs.executeScript(null, {file: "testScript.js"});
+   chrome.tabs.executeScript(null, {file: "replaceScript.js"});
 });
 ~~~~
 
-Finally, calling testScript.js, only slightly modified from the original.
+"replaceScript.js" is the script that  runs a text replacement that converts anything that "looks like" odds into implied probabilities (and you can view the final script [here](https://github.com/dylanpotteroconnell/oddsextension/blob/master/replaceScript.js)). Being totally unfamiliar with JavaScript, I grab code from an Extension that performs a [simple text replace for each webpage](https://9to5google.com/2015/06/14/how-to-make-a-chrome-extensions/). The base structure is as follows. 
 
 ~~~~
 var elements = document.getElementsByTagName('*');
-// https://stackoverflow.com/questions/7168362/run-script-each-time-chrome-extension-icon-clicked
 for (var i = 0; i < elements.length; i++) {
     var element = elements[i];
-
     for (var j = 0; j < element.childNodes.length; j++) {
         var node = element.childNodes[j];
-
         if (node.nodeType === 3) {
-            var pattern = /Macron/gi;
+            var pattern = /abc/gi;
             var text = node.nodeValue;
-            var replacedText = text.replace(pattern, 'Macaroon');
-
+            var replacedText = text.replace(pattern, 'def');
             if (replacedText !== text) {
                 element.replaceChild(document.createTextNode(replacedText), node);
             }
@@ -64,41 +63,38 @@ for (var i = 0; i < elements.length; i++) {
 }
 ~~~~
 
-Now, this is a simple tool for replacing all instances of a word displayed in the HTML with another word. This happens upon us clicking the icon on the toolbar. This is handy because our extension may not be terribly clever, so we only want it trying to convert odds on a page that we know might have some.
 
-Next, we can use Regular Expressions to only replace certain structures of characters, rather than just one static string. To start, we want to try and identify sequences of exactly a plus or minus sign, followed by exactly three digits (e.g. "-220"). This is a useful starting point because it's a very common pattern writing odds. Instead of matching the string "Macron", we instead match the regular expression written below.
+Next, we can use Regular Expressions to only replace certain structures of characters, rather than just one static string. To start, we want to try and identify sequences of exactly a plus or minus sign, followed by at least one digit (e.g. "-220"). The parentheses "capture" the characters inside, as we need to not just find these patterns, but extract the numbers. We want to find the end of the digits, but we want to leave the following character in the page's HTML, so we "grab" the first nondigit character (the [^0-9), but only if it exists (the "?") using "([^0-9]?)", so that we can place that character after our converted expression. 
 
-~~~~
-var pattern = /([+|-])[0-9][0-9][0-9]([^0-9])/gi;
-var text = node.nodeValue;
-var replacedText = text.replace(pattern, '$1123$2');
+~~~
+var pattern = /([+|-])([0-9]+)([^0-9]?)/gi;
 ~~~~
 
-We can break down what exactly we are grabbing here. In the middle, [0-9] denotes a digit from 0 to 9, and we are matching for three of them in a row. To ensure that we do not match any 4 digit numbers, this is followed by [^0-9], which instead matches any character that is *not* a digit from 0 to 9. Finally, [+|-] matches either a plus or minus. Now, the parentheses are used to "capture" certain characters. For testing purposes, we want to replace the three digit string with "123" instead, but we don't want to get rid of the beginning and ending elements. Thus, we surround them with parentheses in the capture regular expression, and then we can use those captured strings in our resulting replaced text using "$1" and "$2". Thus, "$1123$2" reads "the first captured string (which should be a + or a -), then the digits 123, and then the second captured string". And sure enough, when we press the button, we turn any instance of "+XYZ" into "+123". 
 
-Now, the challenge is that we want to perform a small calculation using the number provided. That means we need to be able to feed captured characters (preferably, the numbers and the +/- sign) as inputs into a function that determines the output of the replace function of text. I don't know of the optimal way to do this in JavaScript, but with a Google search we find a way to do just that.
-
-https://www.bennadel.com/blog/55-using-methods-in-javascript-replace-method.htm
+Now, the challenge is that we want to perform a small calculation using the number provided. That means we need to be able to feed captured characters (preferably, the numbers and the +/- sign) as inputs into a function that determines the output of the replace function of text. I don't know of the optimal way to do this in JavaScript, but with a Google search we find a way to do just that [here](https://www.bennadel.com/blog/55-using-methods-in-javascript-replace-method.htm).
 
 We can replace the previous string used for our pattern with a lambda function. Note that the link provided is inaccurate in its description of the inputs to the lambda function, and this is corrected to the comments. The inputs to the dummy function here are always "the full match, $1, $2, $3, ..." (where $X refers to the xth capture element), while in the linked tutorial they use "$1$" in the function input to refer to the full text. We can adapt their function to convert an American moneyline into its implied odds as follows.
+
 ~~~~
+
 var replacedText = text.replace(pattern,
                                 function(fm,$1,$2,$3)
-                                {
-                                  if ($1=="+")
-                                  {
-                                    return(String(Math.round(100.0/(100.0+parseInt($2))*1000)/10.0)+"\%"+$3)
-                                  } else
-                                  {
-                                    return(String(Math.round(parseInt($2)/(100.0+parseInt($2))*1000)/10.0)+"\%"+$3)
-                                  }
-                                });
+				    {
+				      if ($1=="+")
+				      {
+					return("|"+String(Math.round(100.0/(100.0+parseInt($2))*1000)/10.0)+"\%"+"|"+$3)
+				      } else
+				      {
+					return("|"+String(Math.round(parseInt($2)/(100.0+parseInt($2))*1000)/10.0)
+						 +"\%"+"|"+$3)
+				      }
+				    });
 ~~~~
 
 It's worth breaking this into parts. The inputs to our function are the full text ('fm', which we do not use here, but I was not aware of how to suppress this input), and the three strings 'captured' from our regex matching (where $1 refers to the +/- sign, $2 is the number of the line, and $3 is the trailing character). We compute the simple formula to go from a moneyline bet to its implied odds. For a moneyline of +$X, we earn $X+$100 on a win. Thus, the odds (O) needed to break even are $100=0*($X+$100), so O=$100/($X+$100). Similarly, for a moneyline of -$X, we bet $X to win $100, and the implied odds are O=$X/($X+$100). The final return statement is simply cobbled together from some JavaScript documentation. ParseInt turns the '$2' input into an integer, we then multiply by 1000, and divide by 10 to get the result in the form of a percentage with a single decimal place.  
 
-This ends up working quite well, and we now have a simple button that we can press to replace any moneyline with its implied odds. However, the format of the program is a strict "replacement", which is somewhat clunky. Most often, we want to be able to check the implied odds, while still keeping the moneyline in mind. Thus, it would be great if we could simply have the implied odds pop up next to the moneyline, rather than totally replace it. The other functionality I want to add is to calculate the vig taken by the sportsbook when we have a complete state space of mutually exclusive events. That is, often we see a series of odds next to each other that are mutually exclusive and represent all possible outcomes (such as win, draw, and loss in a game of international football). The implied odds of these events will not add up to 1, because the sportsbook needs to take their cut (usually, they will add up to about 1.05). Thus, it would be nice to be able to quickly calculate 1. what this cut actually is, and 2. what the resulting odds are once normalized to add up to 1. This is less important when considering whether or not you should place the bet, but it's useful for telling what the market's best guess of the actual probabilities of these events are. 
+We repeat this process with two other conversions: 2. Fractional Odds (i.e. "3/1") to Implied Probability, and 3. "Undoing" our first conversion, converting implied probabilities back into moneyline odds. We do not include a separate "undo" conversion for Fractional Odds, because I wanted to keep this extension very minimal, and detecting the most accurate Fractional Odds to a rounded decimal percentage is a less straightforward conversion.
 
-https://markb.co.uk/building-a-simple-google-chrome-extension.html
+This results in a simple but effective Chrome Extension that can save quite a bit of time. When on a page with odds in HTML text, you tap the button and can quickly see them replaced by their Implied Probabilities. The major downside is that more complex websites don't always show their odds in such simple HTML text, and learning to detect them for the major bookmakers would be a more substantial challenge. However, most people encounter odds referenced in articles or text discussions, where this Extension works quite cleanly.
 
 
