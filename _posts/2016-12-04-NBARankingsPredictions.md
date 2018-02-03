@@ -4,7 +4,7 @@ title: NBA Power Rankings as a Simple Predictive Tool
 ---
 
 
-As outlined [here](https://dylanpotteroconnell.github.io/dylanpotteroconnell/NBAPowerRankings1/), I thought it would be interesting to run a basic analysis of how effective sports power rankings are as a tool for predicting the results of games. Specifically, I will use the reddit.com/r/NBA biweekly community power ranking (for example, [this](https://www.reddit.com/r/nba/comments/5bpkd6/official_rnba_power_rankings_1_110716/) ranking), an aggregate poll that tends to fairly accurately reflect community consensus on what the power ranking should look like. I will focus on the 2015-2016 NBA season, as the power rankings over that season followed consistent timing and format.
+As outlined [here](https://dylanpotteroconnell.github.io/NBAPowerRankings1/), I thought it would be interesting to run a basic analysis of how effective sports power rankings are as a tool for predicting the results of games. Specifically, I will use the reddit.com/r/NBA biweekly community power ranking (for example, [this](https://www.reddit.com/r/nba/comments/5bpkd6/official_rnba_power_rankings_1_110716/) ranking), an aggregate poll that tends to fairly accurately reflect community consensus on what the power ranking should look like. I will focus on the 2015-2016 NBA season, as the power rankings over that season followed consistent timing and format.
 
 We will examine three straightforward methods of predicting the results of a certain game.
 
