@@ -12,7 +12,7 @@ As someone without the perfect intuition needed to convert these odds in my head
 
 The first feature necessary is simple an extension that runs a script when the icon is clicked. We find a [Stack Overflow question](https://stackoverflow.com/questions/7168362/run-script-each-time-chrome-extension-icon-clicked) (which will be the source of the code for most of the extension) with this very task. Every Chrome Extension begins with a manifest.json file, which gives an overview of the permissions and structure of the extension. I grab their initial suggested manifest.json, and make a number of modifications which will become necessary later. The "contextmenus" under permissions is only necessary to activate context menus within Chrome, which seems like a useful feature but is not yet crucial to the Extension's functionality. I also made a set of three simple icons in GIMP, so that it looks natural in the browser. The key parts here are the two scripts under "background". "rightclick.js" provides instructions for how to create a context menu upon right click, which we ignore for now (I played with it, but it's still a work in progress). However, "background.js" is the script that tells our  
 
-~~~~
+```javascript
 
 {
   "manifest_version": 2,
@@ -36,19 +36,20 @@ The first feature necessary is simple an extension that runs a script when the i
     "contextMenus"
   ]
 }
-~~~~
+
+```
 
 The key parts here are the two scripts under "background": "rightclick.js" provides instructions for how to create a context menu upon right click, which we ignore for now (I played with it, but it's still a work in progress), and "background.js" is a script that calls our text replace script when the Extension icon is clicked. 
 
-~~~~
+```javascript
 chrome.browserAction.onClicked.addListener(function(tab) {
    chrome.tabs.executeScript(null, {file: "replaceScript.js"});
 });
-~~~~
+```
 
 "replaceScript.js" is the script that  runs a text replacement that converts anything that "looks like" odds into implied probabilities (and you can view the final script [here](https://github.com/dylanpotteroconnell/oddsextension/blob/master/replaceScript.js)). Being totally unfamiliar with JavaScript, I grab code from an Extension that performs a [simple text replace for each webpage](https://9to5google.com/2015/06/14/how-to-make-a-chrome-extensions/). The base structure is as follows. 
 
-~~~~
+```javascript
 var elements = document.getElementsByTagName('*');
 for (var i = 0; i < elements.length; i++) {
     var element = elements[i];
@@ -64,22 +65,17 @@ for (var i = 0; i < elements.length; i++) {
         }
     }
 }
-~~~~
+```
 
 ## Detect Patterns, Calculate Conversions
 
-Next, we can use Regular Expressions to only replace certain structures of characters, rather than just one static string. To start, we want to try and identify sequences of exactly a plus or minus sign, followed by at least one digit (e.g. "-220"). The parentheses "capture" the characters inside, as we need to not just find these patterns, but extract the numbers. We want to find the end of the digits, but we want to leave the following character in the page's HTML, so we "grab" the first nondigit character (the [^0-9), but only if it exists (the "?") using "([^0-9]?)", so that we can place that character after our converted expression. 
-
-~~~
-var pattern = /([+|-])([0-9]+)([^0-9]?)/gi;
-~~~~
-
+Next, we can use Regular Expressions to only replace certain structures of characters, rather than just one static string. To start, we want to try and identify sequences of exactly a plus or minus sign, followed by at least one digit (e.g. "-220"). The parentheses "capture" the characters inside, as we need to not just find these patterns, but extract the numbers. We want to find the end of the digits, but we want to leave the following character in the page's HTML, so we "grab" the first nondigit character (the [^0-9), but only if it exists (the "?") using "([^0-9]?)", so that we can place that character after our converted expression, `var pattern = /([+|-])([0-9]+)([^0-9]?)/gi;`.
 
 Now, the challenge is that we want to perform a small calculation using the number provided. That means we need to be able to feed captured characters (preferably, the numbers and the +/- sign) as inputs into a function that determines the output of the replace function of text. I don't know of the optimal way to do this in JavaScript, but with a Google search we find a way to do just that [here](https://www.bennadel.com/blog/55-using-methods-in-javascript-replace-method.htm).
 
 We can replace the previous string used for our pattern with a lambda function. Note that the link provided is inaccurate in its description of the inputs to the lambda function, and this is corrected to the comments. The inputs to the dummy function here are always "the full match, $1, $2, $3, ..." (where $X refers to the xth capture element), while in the linked tutorial they use "$1$" in the function input to refer to the full text. We can adapt their function to convert an American moneyline into its implied odds as follows.
 
-~~~~
+```javascript
 
 var replacedText = text.replace(pattern,
                                 function(fm,$1,$2,$3)
@@ -93,7 +89,7 @@ var replacedText = text.replace(pattern,
 						 +"\%"+"|"+$3)
 				      }
 				    });
-~~~~
+```
 
 It's worth breaking this into parts. The inputs to our function are the full text ('fm', which we do not use here, but I was not aware of how to suppress this input), and the three strings 'captured' from our regex matching (where $1 refers to the +/- sign, $2 is the number of the line, and $3 is the trailing character). We compute the simple formula to go from a moneyline bet to its implied odds. For a moneyline of +$X, we earn $X+$100 on a win. Thus, the odds (O) needed to break even are $100=0*($X+$100), so O=$100/($X+$100). Similarly, for a moneyline of -$X, we bet $X to win $100, and the implied odds are O=$X/($X+$100). The final return statement is simply cobbled together from some JavaScript documentation. ParseInt turns the '$2' input into an integer, we then multiply by 1000, and divide by 10 to get the result in the form of a percentage with a single decimal place.  
 
