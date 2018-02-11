@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Chrome Extension for Converting Odds: HTML Page
+title: Chrome Extension, HTML Page 
 ---
 
 ## Opening a New Page
