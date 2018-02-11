@@ -121,5 +121,26 @@ function IPtoML(IP) {
 
 Each of the conversion functions follows the same format: after each keystroke in the text box, check if the given input is of the correct form, and if it is, upate the other two text boxes with the converted odds. The functionality is very limited, but it fulfills our purposes for now. Converting moneyline odds and implied probability to fractional odds is a tougher challenge, so for now we simiply display them as decimals with a denominator of one (while there is no straightforward one to one mapping to fractional odds, it's possible to write an algorithm to make an educated guess as to what whole number odds are closest, but for now we keep it simple).
 
-When we open up this HTML page, it works as desired, but when we load it into our extension, it opens up and... does nothing. None of the fields update themselves, no matter howm much you try. A quick Google search determines that we are barking right up the wrong tree. A few years ago, [Chrome banned all inline Javascript](https://developer.chrome.com/extensions/contentSecurityPolicy#JSExecution) from its extension pages. I have no doubt that they had good security related reasons to do so, but it means that our page as written is quite useless. However, it should be possible to rewrite each of these functions in Chrome's preferred format and arrive at the same functionality.
+When we open up this HTML page, it works as desired, but when we load it into our extension, it opens up and... does nothing. None of the fields update themselves, no matter howm much you try. A quick Google search determines that we are barking right up the wrong tree. A few years ago, [Chrome banned all inline Javascript](https://developer.chrome.com/extensions/contentSecurityPolicy#JSExecution) from its extension pages. I have no doubt that they had good security related reasons to do so, but it means that our page as written is quite useless. 
+
+## Removing Inline Javascript
+
+It turns out that for simple HTML forms like this, the switch is relatively painless. We remove the function calls from the HTML file, so `<input type="text" id="ml" name="ml" onkeyup="convML(this)"/>` becomes `<input type="text" id="ml" name="ml"/>`. Then, in our "converter.js" file, we need to add an EventListener function to process each of these events, based on their ID.
+
+```javascript
+document.addEventListener("DOMContentLoaded", function(event) {
+  document.getElementById("ml").addEventListener("keyup", function() {
+        convML(document.getElementById('ml'));
+     });
+  document.getElementById("frac").addEventListener("keyup", function() {
+        convFrac(document.getElementById('frac'));
+     });
+  document.getElementById("ip").addEventListener("keyup", function() {
+        convIP(document.getElementById('ip'));
+     });
+});
+``` 
+The rest of our code can stay the exact same. Once we use the EventListener format, our other Javascript functions work just fine.
+
+
 
