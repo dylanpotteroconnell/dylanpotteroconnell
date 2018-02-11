@@ -35,7 +35,6 @@ var id = chrome.contextMenus.create({
     }
 });
 console.log("selection item:" + id);
-
 ```
 
 ```javascript
@@ -43,13 +42,11 @@ console.log("selection item:" + id);
 chrome.extension.sendResponse(convert(window.getSelection().toString()));
 ```
 
-
-This is pretty rote, with small changes from the linked work. Initially, I hoped to perform some calculations with the selected text, and then display the result in the context menu itself. After some trial and error, it seems that this is quite a bit more complicated than it would seem. While you can reference the text in the selection using "%s", the issue is that this is passed through our function as the literal string "%s", and not the selection itself, until it is displayed (at which point it is replaced by tthe selection). This means we can't easily perform a calculation with it. The underlying challenge is that Chrome wants to display the text on the context menu immediately, so we would need to manually program in a structure that lets it wait for us to convert the text. For now, we instead focusing on simply opening the useful HTML page "oddsconverter.html".
+This is pretty rote, with small changes from the linked work (and final code [here](https://github.com/dylanpotteroconnell/oddsextension/blob/master/replaceScript.js)). Initially, I hoped to perform some calculations with the selected text, and then display the result in the context menu itself. After some trial and error, it seems that this is quite a bit more complicated than it would seem. While you can reference the text in the selection using "%s", the issue is that this is passed through our function as the literal string "%s", and not the selection itself, until it is displayed (at which point it is replaced by tthe selection). This means we can't easily perform a calculation with it. The underlying challenge is that Chrome wants to display the text on the context menu immediately, so we would need to manually program in a structure that lets it wait for us to convert the text. For now, we instead focusing on simply opening the useful HTML page "oddsconverter.html".
 
 ## Odds Converter HTML Page
 
 We want an HTML page that neatly converts between each sort of odds. For a rough idea of the base template, we borrow [this](https://www.daniweb.com/programming/web-development/threads/468068/auto-calculate-two-textfields) guide. While their goal is quite unrelated, this form has the neat feature where it calculates its result after *each* keystroke. I want this extension to be light and nimble, so I like the idea of it constantly updating based on new input.
-
 
 ```html
 <!doctype html>
@@ -68,9 +65,7 @@ We want an HTML page that neatly converts between each sort of odds. For a rough
 </form>
 </body>
 </html>
-
 ``` 
-
 The heavy lifting is of course done by the functions stored in the javascript file "converter.js".
 
 ```javascript
