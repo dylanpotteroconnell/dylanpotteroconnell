@@ -1,6 +1,5 @@
 ---
 layout: post
-mathjax: true
 title: Shiny App for Analyzing MTG Design Trends
 ---
 
@@ -16,7 +15,11 @@ Before any work can be done in Shiny, we need a dataset to analyze. We thank the
 
 ## Shiny App
 
-$$a^2 + b^2 = c^2$$
+The first goal of the Shiny app (beyond the main purpose of trying to get a basic understanding of the capabilities of Shiny) is to analyze the shifts of design philosphy for Magic keywords. Wizards' shifting position on card keywords are often publicly stated. They are open about which mechanics are "evergreen" (used and available in every set) and "deciduous" (available when needed), as well as which keywords are primary, secondary, or tertiary in each ofthe five colors (effecting the frequency with which they are used, as well as the rarity distribution). While these shifts are publicly discussed, it's interesting to actually test how these changes manifest in the creatures printed, as well as consider whether we spot more subtle, unrecognized shifts.
 
-abc 123 testing mathjax
-newtest
+The app considers the two year rolling average of the frequency of the keyword's usage (i.e. the number of creatures printed with that keyword over the total number of creatures printed). Then, we let it subset based on any selection of colors, as well as focusing only on the "Common" rarity, and plot the results. This toy app is quite simple, but it's surprising how much work goes into ensuring consistent formatting for a plot when the inputs can vary so wildly. We then add some neat features such as selecting a range of years, and fetching all cards with that keyword during that range (which lets us examine suprising results more closely within the app).
+
+![Shroud]({{ "/images/shroudtest.png"}})
+
+![Hexproof]({{ "/images/hexprooftest.png"}})
+ 
