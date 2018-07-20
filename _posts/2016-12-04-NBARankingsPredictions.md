@@ -1,6 +1,6 @@
 ---
 layout: post
-title: NBA Power Rankings\: Predictive Efficacy
+title: NBA Power Rankings&#58; Predictive Efficacy
 ---
 
 

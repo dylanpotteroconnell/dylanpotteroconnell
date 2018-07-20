@@ -1,6 +1,6 @@
 ---
 layout: post
-title: OddsConverter Extension\: Conversion Webpage
+title: OddsConverter Extension&#58; Conversion Webpage
 ---
 
 ## Opening a New Page

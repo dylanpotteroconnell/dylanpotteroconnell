@@ -1,6 +1,6 @@
 ---
 layout: post
-title: OddsConverter Extension\: Converting Plaintext
+title: OddsConverter Extension&#58; Converting Plaintext
 ---
 
 

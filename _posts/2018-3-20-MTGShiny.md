@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Playing with Shiny\: MTG Design Trends
+title: Playing with Shiny&#58; MTG Design Trends
 ---
 
 The challenge of data exploration frequently lies not in answering any specific question, but in the scope of possible questions which might be asked. Usual incentives promote us to analyze data in defense of a predefined narrative, but it can be just as valuable to construct methods for any user to conduct their own open ended exploration of the dataset. To do this requires interactivity with the user, which presents a substantially different challenge than what we usually face. I wanted to explore how to construct a simple Shiny app, which creates a slick and simple user interface for a given R program.
