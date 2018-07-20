@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Google Extension for Converting Odds 
+title: OddsConverter Extension: Converting Plaintext
 ---
 
 

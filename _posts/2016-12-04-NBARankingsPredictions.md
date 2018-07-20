@@ -1,6 +1,6 @@
 ---
 layout: post
-title: NBA Power Rankings as a Simple Predictive Tool
+title: NBA Power Rankings: Predictive Efficacy
 ---
 
 

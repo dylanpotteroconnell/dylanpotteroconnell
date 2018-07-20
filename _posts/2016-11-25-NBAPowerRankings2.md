@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Scraping NBA Power Rankings
+title: NBA Power Rankings: Scraping Data
 ---
 
 In the [last post](https://dylanpotteroconnell.github.io/NBAPowerRankings1/), I provided a rambling introduction to sports power rankings. My goal is to provide a rudimentary analysis for the efficacy of NBA power rankings as a predictive tool (once the data is compiled, the actual analysis can be found [here](https://dylanpotteroconnell.github.io/NBARankingsPredictions/)). For this example, we will use the /r/NBA Reddit community power rankings, a poll involving one appointed fan representing each team. These provide a pretty well rounded representative rankings, as aggregate polls tend to be fairly representative, and less prone to shocking choices designed to generate discussion.  To compare the  accuracy of using power rankings to predict game results, versus using metrics like win/loss record or point differential. To do this, we need two pieces: a dataset of the NBA teams power rankings throughout the 2015-2016 season (we use the /r/NBA reddit community power rankings for this example), the teams' win/loss record and point differential on those dates, and then the actual observed results of the NBA season. We begin by compiling the power rankings data.

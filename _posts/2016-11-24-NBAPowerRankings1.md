@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Sports Power Rankings
+title: Brief Thoughts on Sports Power Rankings
 ---
 
 Discussing sports has always appealed to me more than the actual viewing experience, and thus sports "Power Rankings" are a guilty pleasure of mine. They distill the discussion of the state of a league into a simple and clear list, and avoid the wishy washy generalities that plague most sports discussion. For basic background context, some example power rankings might be the weekly ESPN's weekly NFL [power ranking](http://www.espn.com/nfl/story/_/id/18094746/nfl-2016-week-12-power-rankings-dallas-cowboys-seattle-seahawks-new-england-patriots), or reddit.com/r/NBA's biweekly community [power ranking](https://www.reddit.com/r/nba/comments/5bpkd6/official_rnba_power_rankings_1_110716/), or Bleacher Report's [power ranking](http://bleacherreport.com/articles/2274963-nba-haircut-power-rankings) of 14 distinctive NBA hairstyles. Generally, power rankings are roughly intended as a measure of how strong a team is at that moment in time, something with a team's simple win loss record does a very imprecise job of measuring.  Of course, the downside of sports power rankings is that they are poorly defined. Any argument over the ranking of teams must necessarily devolve into an argument over the definition of a "power ranking". 

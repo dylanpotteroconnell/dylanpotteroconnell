@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Chrome Extension HTML Page 
+title: OddsConverter Extension: Conversion Webpage
 ---
 
 ## Opening a New Page
