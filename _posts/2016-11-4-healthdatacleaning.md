@@ -1,6 +1,6 @@
 ---
 layout: post
-title: iPhone Walking Data: Cleaning
+title: iPhone Walking Data\: Cleaning
 ---
 
 Overall, these blog posts are intended to be a simple diary for some side projects that I work on in my spare time. They have no specific end goal, I just think it's valuable to get used to recording and explaining the things that you do. I'm quite novice in most things related to computing, so this is just one person's learning exploration, and may be riddled with poor form and errors.

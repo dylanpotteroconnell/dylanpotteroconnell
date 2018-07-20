@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Elo Ratings: Results of Toy Model for Group Stage
+title: Elo Ratings\: Results of Toy Model for Group Stage
 ---
 
 Over the winter, I built a straightforward Elo rating system to model soccer/football national teams during the World Cup. Elo rating systems are used all around us, but most people never bother to delve into the details of how they are constructed, which makes it difficult to draw precise inferences, so this is a useful exercise. Now that the group stage of the 2018 World Cup has wrapped up, I'll take a quick look at how the Elo rating system performed if it were used as a betting system..

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: iPhone Walking Data: Analysis
+title: iPhone Walking Data\: Analysis
 ---
 
 In the previous post, we cleaned the walking data stored by my iPhone. I was curious how I could display my walking patterns in graphical form. My first goal was to compare my patterns by day of the week.
