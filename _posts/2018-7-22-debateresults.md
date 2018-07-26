@@ -38,7 +38,9 @@ As whuber explains,
 
 This is a more elegant and powerful example of the situation outlined above, where a seemingly decisive win can arise from a side having worse relative performance in convincing both the Undecided and opposing camp.
 
+### Next time…
 
+This is a long winded outline of a peculiar challenge in how a podcast might choose a winner of a debate. However, as they track the individual shifts of each of these groups, the results provide us with a quite fascinating dataset for how we tend to shift our opinion on polarizing issues. Next, I’ll compile this dataset, consider what insights it provides, and whether we see counterintuitive results like those outlined above.
 
 
 
