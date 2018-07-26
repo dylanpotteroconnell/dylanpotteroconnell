@@ -1,5 +1,6 @@
 ---
 layout: post
+mathjax: true
 title: Winning a Debate&#58; Results from Intelligence Squared
 ---
  
