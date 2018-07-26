@@ -21,9 +21,20 @@ Imagine an overwhelmingly popular issue where 90% of the audience supports the F
 When I was doing a brief search to find whether a dataset for the Intelligence Squared debate results were compiled anywhere, I stumbled upon [this](https://stats.stackexchange.com/a/94742) excellent post by whuber on StackExchange. I have the pleasure of knowing whuber in person, and in characteristic fashion he gives a thorough and insightful analysis of the ways in which we can have different shifts in support (among the different groups) for the same absolute result. Specifically, whuber assumes that we have access to the percentage of support before and after the debate, and considers plausible ways to use these to estimate those between-group shifts. He writes the result for a given debate using a 3x3 matrix, where the $ij$th element represents the percent of the original supporters for the $i$th camp before the debate are supporters of the $j$th camp after the debate (with For being 1, Against 2, and Undecided 3). 
 
 
-
-$$ a^2+b^2 $$
+$$
+\mathbb{A}=\left(
+\begin{array}{ccc}
+ 1 & 0 & 0.125 \\
+ 0 & 1 & 0.175 \\
+ 0 & 0 & 0.700 \\
+\end{array}
+\right)
+$$
 However, in this case we can sidestep some of these issues, because Intelligence Squared *does* report the specific between-group changes for all debates after 2012.
+
+$$
+d^2 + c^2 = 33
+$$
 
 We’ll provide 
 
