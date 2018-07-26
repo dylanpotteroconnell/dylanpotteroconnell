@@ -18,27 +18,25 @@ The problem with this metric stems from the fact  that *there are a variety of w
 
 Imagine an overwhelmingly popular issue where 90% of the audience supports the For side, and 10% supports the Against, with no one undecided. After a heated debate, 85% of the audience supports the For side, and 15% support the Against side. The lack of undecided voters should make this result even more straightforward than most, and the Intelligence Squared Metric (ISM) would declare the Against side the winner, as it gained support (and the For side lost support). But even in this simple case, we note that there are a variety of ways for this result to occur. There could be 5% of people who began in the For camp, and switched to the Against camp, and no one else switched, which makes the Against camp look far more persuasive. However, what if 10% of people began in the For camp and switched to the Against camp, and 5% began in the Against camp and switched to the For side? We’d see the same absolute result. Yet, in this case, the For debaters convinced a full half of the original Against supporters  to change sides, while the Against debaters convinced only 1/9 of the original For side to change their minds. Can we really declare the Against side the winner? It depends on what you value in a debate. But personally the second scenario seems to persuasively argue that the absolute percentage point change used by the Intelligence Squared Metric (ISM) can mislead, and is essentially “rewarding” the Against side implicitly because they have a much larger possible audience that they can try and convert.
 
-When I was doing a brief search to find whether a dataset for the Intelligence Squared debate results were compiled anywhere, I stumbled upon [this](https://stats.stackexchange.com/a/94742) excellent post by whuber on StackExchange. I have the pleasure of knowing whuber in person, and in characteristic fashion he gives a thorough and insightful analysis of the ways in which we can have different shifts in support (among the different groups) for the same absolute result. Specifically, whuber assumes that we have access to the percentage of support before and after the debate, and considers plausible ways to use these to estimate those between-group shifts. He writes the result for a given debate using a 3x3 matrix, where the $ij$th element represents the percent of the original supporters for the $i$th camp before the debate are supporters of the $j$th camp after the debate (with For being 1, Against 2, and Undecided 3). 
+When I was doing a brief search to find whether a dataset for the Intelligence Squared debate results were compiled anywhere, I stumbled upon [this](https://stats.stackexchange.com/a/94742) excellent post by whuber on StackExchange. I have the pleasure of knowing whuber in person, and in characteristic fashion he gives a thorough and insightful analysis of the ways in which we can have different shifts in support (among the different groups) for the same absolute result. Specifically, whuber assumes that we have access to the percentage of support before and after the debate, and considers plausible ways to use these to estimate those between-group shifts. I encourage anyone interested to read his explanation of some of the mathematical structures that might make sense in this situation. In our case, I’ll simply cite his provided example, reproduced here, for how this can become particularly messy when undecided voters are included. He writes the result for a given debate using a 3x3 matrix, where the $ij$th element represents the percent of the original supporters for the $i$th camp before the debate are supporters of the $j$th camp after the debate (with For being 1, Against 2, and Undecided 3). 
 
+Consider a situation where originally 20% are For, 60% are Against, and 20% are undecided (we will write this as a vector $(.2, .6, .2)$, and after the debate, we switch to $(.3, .4, .3)$. This would be a huge win for the For side, as it gained 10 percentage points of support, and the Against side lost 20 percentage points. However, one such transition matrix which could explain this result is suggested by whuber below.
 
 $$
-\mathbb{A}=\left(
+\mathbb{A} = \left(
 \begin{array}{ccc}
- 1 & 0 & 0.125 \\
- 0 & 1 & 0.175 \\
- 0 & 0 & 0.700 \\
+ 0.32 & 0.29 & 0.32 \\
+ 0.36 & 0.42 & 0.36 \\
+ 0.32 & 0.29 & 0.32 \\
 \end{array}
-\right)
-$$
-However, in this case we can sidestep some of these issues, because Intelligence Squared *does* report the specific between-group changes for all debates after 2012.
-
-$$
-d^2 + c^2 = 33
+\right).
 $$
 
-We’ll provide 
+As whuber explains,
 
+> Here, $36% of the “Fors" changed to the other side while only 29% of the “Against" changed to the opposite opinion. Moreover, slightly more of the undecideds (36%) vs 32%) came out "against" rather than for. Although their numbers in this audience decreased, we have a situation (reminiscent of Simpson's Paradox) in which the “Against" faction clearly won the debate!
 
+This is a more elegant and powerful example of the situation outlined above, where a seemingly decisive win can arise from a side having worse relative performance in convincing both the Undecided and opposing camp.
 
 
 
