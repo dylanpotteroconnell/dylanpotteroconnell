@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Winning a Debate&#58; Results from Intelligence Squared
--—-
+---
  
 How does one measure the winner of a debate? If the debate itself is the focus, it’s wholly unsatisfying to just tally up the opinions of the viewers, as surely that just reflects the opinion of the audience, which was likely largely decided before the debate had even begun. Intelligence Squared is an excellent podcast which teaches policy through moderated debate. A resolution is proposed (e.g. “Affirmative Action does more harm than good”), and two teams of two experts argue the issue in a structured setting. Many other programs aim for balance with a halfhearted attempt to pay lip service to the opposing side (without truly believing it), so it’s refreshing to hear passionate and informed argument from both sides of the aisle. If one side cites a misleading statistic, their opponents are ready to actually call them out on it, penalizing the lazy rhetorical tactics that plague discourse in an echo chamber.
 
@@ -21,9 +21,7 @@ When I was doing a brief search to find whether a dataset for the Intelligence S
 
 
 
-$$
-a^2+b^2
-$$
+$$ a^2+b^2 $$
 However, in this case we can sidestep some of these issues, because Intelligence Squared *does* report the specific between-group changes for all debates after 2012.
 
 We’ll provide 
