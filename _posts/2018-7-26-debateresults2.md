@@ -25,7 +25,7 @@ debate_vote_results={"live":{"pre":{"f":36,"a":45,"u":19,"w":"a"},"post":{"f":32
 gsub(".*\"f\":\\{\"f\":(\\d+\\.*\\d*),\"a\":(\\d+\\.*\\d*),\"u\":(\\d+\\.*\\d*).*", "\\1 \\2 \\3", post)
 ```
 
-where we identify the numbers that we’re interested in. With this data compiled into a single data frame, we can do some simple adjustments 
+where we identify the numbers that we’re interested in. With the numbers compiled into one large data frame (which can be viewed in raw form [here](https://github.com/dylanpotteroconnell/IntelSquaredProject/blob/master/votingresultsfinal.csv), for those interested in examining the data themselves). In the next post, we can actually dive into the data itself.
 
 
 
