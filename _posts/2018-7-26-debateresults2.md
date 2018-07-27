@@ -14,9 +14,8 @@ The results from each Intelligence Squared debate are posted online in pages suc
 
 Once we have a full list of all the relevant URLs, luckily, the results themselves are generally presented in a consistent format. Thus,  some simple work with regular expressions gathers the data that we need. One such example.
 
-```HTML
+```
 debate_vote_results={"live":{"pre":{"f":36,"a":45,"u":19,"w":"a"},"post":{"f":32,"a":61,"u":7,"w":"a"},"s":41,"t":100,"f":{"f":18,"a":15,"u":3},"a":{"f":6,"a":38,"u":1},"u":{"f":8,"a":8,"u":3}},"online":{"t":100,"pre":{"f":50,"a":35,"u":15,"w":""},"post":{"f":44,"a":50,"u":6,"w":""},"f":{"f":35,"a":13,"u":2},"a":{"f":4,"a":27,"u":4},"u":{"f":6,"a":10,"u":0}}};
-
 ```
 
  In case anyone wants to borrow this sort of simple scrape for their own projects, you can find the code [here](https://github.com/dylanpotteroconnell/IntelSquaredProject/blob/master/intelsquareddata.R), although the approach is extremely messy. Luckily, with R it’s more important to be fast than it is to be clean, and you can use very awkward code as long as you find it readable and clear. Regular expressions like this can grab the relevant numbers that we need, and we store it in one large data frame.
