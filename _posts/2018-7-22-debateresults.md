@@ -1,7 +1,7 @@
 ---
 layout: post
 mathjax: true
-title: Winning a Debate&#58; Results from Intelligence Squared
+title: Winning a Debate&#58; Insights from Intelligence Squared
 ---
  
 How does one measure the winner of a debate? If the debate itself is the focus, it’s wholly unsatisfying to just tally up the opinions of the viewers, as surely that just reflects the opinion of the audience, which was likely largely decided before the debate had even begun. Intelligence Squared is an excellent podcast which teaches policy through moderated debate. A resolution is proposed (e.g. “Affirmative Action does more harm than good”), and two teams of two experts argue the issue in a structured setting. Many other programs aim for balance with a halfhearted attempt to pay lip service to the opposing side (without truly believing it), so it’s refreshing to hear passionate and informed argument from both sides of the aisle. If one side cites a misleading statistic, their opponents are ready to actually call them out on it, penalizing the lazy rhetorical tactics that plague discourse in an echo chamber.
@@ -34,13 +34,13 @@ $$
 
 As whuber explains,
 
-> Here, $36% of the “Fors" changed to the other side while only 29% of the “Against" changed to the opposite opinion. Moreover, slightly more of the undecideds (36%) vs 32%) came out "against" rather than for. Although their numbers in this audience decreased, we have a situation (reminiscent of Simpson's Paradox) in which the “Against" faction clearly won the debate!
+> Here, 36% of the “Fors" changed to the other side while only 29% of the “Against" changed to the opposite opinion. Moreover, slightly more of the undecideds (36%) vs 32%) came out "against" rather than for. Although their numbers in this audience decreased, we have a situation (reminiscent of Simpson's Paradox) in which the “Against" faction clearly won the debate!
 
 This is a more elegant and powerful example of the situation outlined above, where a seemingly decisive win can arise from a side having worse relative performance in convincing both the Undecided and opposing camp.
 
 ### Next time…
 
-This is a long winded outline of a peculiar challenge in how a podcast might choose a winner of a debate. However, as they track the individual shifts of each of these groups, the results provide us with a quite fascinating dataset for how we tend to shift our opinion on polarizing issues. Next, I’ll compile this dataset, consider what insights it provides, and whether we see counterintuitive results like those outlined above.
+This is a long winded outline of a peculiar challenge in how a podcast might choose a winner of a debate. However, as they track the individual shifts of each of these groups, the results provide us with a quite fascinating dataset for how we tend to shift our opinion on polarizing issues. Next, I’ll compile this dataset, consider what insights it provides, and whether we see counterintuitive results like those outlined above. And above all, I highly encourage people to check out the podcast, which is of consistently high quality (and I’m very grateful that they collected this data and make it publicly available).
 
 
 
