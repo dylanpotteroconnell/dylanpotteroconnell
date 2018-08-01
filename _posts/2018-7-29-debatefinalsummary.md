@@ -44,19 +44,15 @@ The first winning metric we consider is the Intelligence Squared Metric (ISM), w
 
 Thus the first question is whether there are cases where the UDM declares a winner which is the reverse of the ISM, like the toy example outlined above by whuber. It turns out that this is *not* an idle concern, and in fact there have been five debates with this result.
 
-$$
-\begin{table}[ht]
-\centering
-\begin{tabular}{rrrr}
-  \hline
- & 1 & 2 & 3 \\ 
-  \hline
-1 & 0.50 & 0.13 & 0.42 \\ 
-  2 & 0.42 & 0.84 & 0.42 \\ 
-  3 & 0.08 & 0.02 & 0.16 \\ 
-   \hline
-\end{tabular}
-\end{table}
+
 $$
 
+\left(
+\begin{array}{ccc}
+0.50 & 0.13 & 0.42 \\ 
+0.42 & 0.84 & 0.42 \\ 
+ 0.08 & 0.02 & 0.16 \\ 
+\end{array}
+\right).
+$$
 
