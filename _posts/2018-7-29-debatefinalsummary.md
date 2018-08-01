@@ -42,16 +42,24 @@ Looking at the results of the Intelligence Squared debates in reality, we see th
 
 The first winning metric we consider is the Intelligence Squared Metric (ISM), which measures shift in absolute percentage of support. We next consider the Undisputed Metric (UDM), which uses the proportional switching outlined above, and only assigns a winner when one side *both* convinces a greater proportion of Undecided voters to join their side, as well as a greater proportion of the other side to switch their opinion. In cases when these do not agree, no winner is declared.
 
-Thus the first question is whether there are cases where the UDM declares a winner which is the reverse of the ISM, like the toy example outlined above by whuber. It turns out that this is *not* an idle concern, and in fact there have been five debates with this result.
+Thus the first question is whether there are cases where the UDM declares a winner which is the reverse of the ISM, like the toy example outlined above by whuber. It turns out that this is *not* an idle concern, and in fact there have been five debates with this conflicting result.
+
+|    | Title                                                  | Date       | Abs Change: For | Abs Change: Against | ISM Winner | UDM Winner |
+|---:|--------------------------------------------------------|------------|----------------:|--------------------:|------------|------------|
+|  3 | Trigger Warning: Safe Spaces Are Dangerous             | 06/23/2018 |              -1 |                  10 | Against    | For        |
+|  7 | Preserve Net Neutrality: All Data is Created Equal     | 04/17/2018 |               0 |                   8 | Against    | For        |
+| 55 | Legalize Assisted Suicide                              | 11/03/2014 |               4 |                  11 | Against    | For        |
+| 74 | Break up the Big Banks                                 | 10/16/2013 |              13 |                  20 | Against    | For        |
+| 77 | Cutting the Pentagon's Budget is a Gift to our Enemies | 06/19/2013 |               9 |                   8 | For        | Against    |
+| 79 | The GOP must Seize the Center or Die                   | 04/17/2013 |               2 |                  14 | Against    | For        |
 
 
 $$
-
 \left(
 \begin{array}{ccc}
-0.50 & 0.13 & 0.42 \\ 
-0.42 & 0.84 & 0.42 \\ 
- 0.08 & 0.02 & 0.16 \\ 
+0.67 & 0.44 & 0.39 \\ 
+0.26 & 0.56 & 0.33 \\ 
+0.07 & 0.00 & 0.28 \\ 
 \end{array}
 \right).
 $$
