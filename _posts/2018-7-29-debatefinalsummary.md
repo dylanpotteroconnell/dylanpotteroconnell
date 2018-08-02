@@ -137,7 +137,7 @@ This is not surprising when the absolute percentage changes are so close (such a
 
 
 $$
-\left(
+\text{Trigger Warnings Debate: }\left(
 \begin{array}{ccc}
 0.67 & 0.44 & 0.39 \\ 
 0.26 & 0.56 & 0.33 \\ 
@@ -148,4 +148,4 @@ $$
 
 The For camp was able to lure 39% of the Undecided voters, compared to only 33% by the Against camp. And the For side was able to convince 44% of the Against camp to change their minds, while the Against camp convinced only 26% of the For camp to swap. And yet the For camp *lost* support, while the Against camp gained support. This can easily be explained by the initial disparity in popularity. The For side began with 57% of the vote, so while they convinced a larger proportion of Undecided and Against voters to change their view, they had a minority of the audience who were even available to sway.
 
-This encapsulates the issue because it feels fundamentally wrong to declare the winner of the debate to be a side that *lost* popularity during the course of the night.
+This is a perfect example of the issue, because it feels fundamentally wrong to declare the winner of the debate to be a side that *lost* popularity during the course of the night. This cousin of Simpson’s Paradox defies our intuition, where we want relative and absolute changes to point in the same direction.
