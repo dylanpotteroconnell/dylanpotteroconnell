@@ -48,28 +48,29 @@ Thus the first question is whether there are cases where the UDM declares a winn
 .tg  {border-collapse:collapse;border-spacing:0;border-color:#ccc;}
 .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;}
 .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#f0f0f0;}
+.tg .tg-yp4a{border-color:#333333;vertical-align:top}
 .tg .tg-us36{border-color:inherit;vertical-align:top}
-.tg .tg-yw4l{vertical-align:top}
+.tg .tg-fraq{color:#333333;border-color:#000000;vertical-align:top}
 .tg .tg-dvpl{border-color:inherit;text-align:right;vertical-align:top}
 </style>
 <table class="tg">
   <tr>
     <th class="tg-us36">Title</th>
     <th class="tg-us36">Date</th>
-    <th class="tg-yw4l">Pre: For</th>
-    <th class="tg-yw4l">Pre: Against</th>
-    <th class="tg-yw4l">Pre: Undecided</th>
-    <th class="tg-dvpl">Abs $\Delta$: For</th>
-    <th class="tg-dvpl">Abs $\Delta$: Against</th>
+    <th class="tg-yp4a">Pre: For</th>
+    <th class="tg-fraq">Pre: Against</th>
+    <th class="tg-yp4a">Pre: Undecided</th>
+    <th class="tg-dvpl">Abs. $\Delta$: For</th>
+    <th class="tg-dvpl">Abs. $\Delta$: Against</th>
     <th class="tg-us36">ISM Winner</th>
     <th class="tg-us36">UDM Winner</th>
   </tr>
   <tr>
     <td class="tg-us36">Trigger Warning: Safe Spaces Are Dangerous</td>
     <td class="tg-us36">06/23/2018</td>
-    <td class="tg-yw4l">57</td>
-    <td class="tg-yw4l">25</td>
-    <td class="tg-yw4l">18</td>
+    <td class="tg-yp4a">57</td>
+    <td class="tg-fraq">25</td>
+    <td class="tg-yp4a">18</td>
     <td class="tg-dvpl">-1</td>
     <td class="tg-dvpl">10</td>
     <td class="tg-us36">Against</td>
@@ -78,9 +79,9 @@ Thus the first question is whether there are cases where the UDM declares a winn
   <tr>
     <td class="tg-us36">Preserve Net Neutrality: All Data is Created Equal</td>
     <td class="tg-us36">04/17/2018</td>
-    <td class="tg-yw4l">60</td>
-    <td class="tg-yw4l">23</td>
-    <td class="tg-yw4l">17</td>
+    <td class="tg-yp4a">60</td>
+    <td class="tg-fraq">23</td>
+    <td class="tg-yp4a">17</td>
     <td class="tg-dvpl">0</td>
     <td class="tg-dvpl">8</td>
     <td class="tg-us36">Against</td>
@@ -89,9 +90,9 @@ Thus the first question is whether there are cases where the UDM declares a winn
   <tr>
     <td class="tg-us36">Legalize Assisted Suicide</td>
     <td class="tg-us36">11/03/2014</td>
-    <td class="tg-yw4l">63</td>
-    <td class="tg-yw4l">11</td>
-    <td class="tg-yw4l">26</td>
+    <td class="tg-yp4a">63</td>
+    <td class="tg-fraq">11</td>
+    <td class="tg-yp4a">26</td>
     <td class="tg-dvpl">4</td>
     <td class="tg-dvpl">11</td>
     <td class="tg-us36">Against</td>
@@ -100,9 +101,9 @@ Thus the first question is whether there are cases where the UDM declares a winn
   <tr>
     <td class="tg-us36">Break up the Big Banks</td>
     <td class="tg-us36">10/16/2013</td>
-    <td class="tg-yw4l">35</td>
-    <td class="tg-yw4l">19</td>
-    <td class="tg-yw4l">46</td>
+    <td class="tg-yp4a">35</td>
+    <td class="tg-fraq">19</td>
+    <td class="tg-yp4a">46</td>
     <td class="tg-dvpl">13</td>
     <td class="tg-dvpl">20</td>
     <td class="tg-us36">Against</td>
@@ -111,9 +112,9 @@ Thus the first question is whether there are cases where the UDM declares a winn
   <tr>
     <td class="tg-us36">Cutting the Pentagon's Budget is a Gift to our Enemies</td>
     <td class="tg-us36">06/19/2013</td>
-    <td class="tg-yw4l">20</td>
-    <td class="tg-yw4l">58</td>
-    <td class="tg-yw4l">22</td>
+    <td class="tg-yp4a">20</td>
+    <td class="tg-fraq">58</td>
+    <td class="tg-yp4a">22</td>
     <td class="tg-dvpl">9</td>
     <td class="tg-dvpl">8</td>
     <td class="tg-us36">For</td>
@@ -122,9 +123,9 @@ Thus the first question is whether there are cases where the UDM declares a winn
   <tr>
     <td class="tg-us36">The GOP must Seize the Center or Die</td>
     <td class="tg-us36">04/17/2013</td>
-    <td class="tg-yw4l">63</td>
-    <td class="tg-yw4l">14</td>
-    <td class="tg-yw4l">23</td>
+    <td class="tg-yp4a">63</td>
+    <td class="tg-fraq">14</td>
+    <td class="tg-yp4a">23</td>
     <td class="tg-dvpl">2</td>
     <td class="tg-dvpl">14</td>
     <td class="tg-us36">Against</td>
@@ -133,7 +134,6 @@ Thus the first question is whether there are cases where the UDM declares a winn
 </table>
 
 This is not surprising when the absolute percentage changes are so close (such as in “Cutting the Pentagon’s budget…”), but the other debates show some wildly divergent results. We even see an example of whuber’s hypothesized situation. In the “Trigger Warnings” debate on 06/23/2018, we see the For camp lose support, the Against camp gain support, and yet we see that the For camp was declared the winner by the UDM. The transition matrix for this debate is shown here
-
 
 
 $$
@@ -146,5 +146,6 @@ $$
 \right).
 $$
 
-The For camp was able to lure 39% of the Undecided voters, compared to only 33% by the Against camp. And the For side was able to convince 44% of the Against camp to change their minds, while the Against camp convinced only 40
+The For camp was able to lure 39% of the Undecided voters, compared to only 33% by the Against camp. And the For side was able to convince 44% of the Against camp to change their minds, while the Against camp convinced only 26% of the For camp to swap. And yet the For camp *lost* support, while the Against camp gained support. This can easily be explained by the initial disparity in popularity. The For side began with 57% of the vote, so while they convinced a larger proportion of Undecided and Against voters to change their view, they had a minority of the audience who were even available to sway.
 
+This encapsulates the issue because it feels fundamentally wrong to declare the winner of the debate to be a side that *lost* popularity during the course of the night.
