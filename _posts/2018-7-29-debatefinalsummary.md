@@ -44,15 +44,78 @@ The first winning metric we consider is the Intelligence Squared Metric (ISM), w
 
 Thus the first question is whether there are cases where the UDM declares a winner which is the reverse of the ISM, like the toy example outlined above by whuber. It turns out that this is *not* an idle concern, and in fact there have been five debates with this conflicting result.
 
-|    | Title                                                  | Date       | Abs Change: For | Abs Change: Against | ISM Winner | UDM Winner |
-|---:|--------------------------------------------------------|------------|----------------:|--------------------:|------------|------------|
-|  3 | Trigger Warning: Safe Spaces Are Dangerous             | 06/23/2018 |              -1 |                  10 | Against    | For        |
-|  7 | Preserve Net Neutrality: All Data is Created Equal     | 04/17/2018 |               0 |                   8 | Against    | For        |
-| 55 | Legalize Assisted Suicide                              | 11/03/2014 |               4 |                  11 | Against    | For        |
-| 74 | Break up the Big Banks                                 | 10/16/2013 |              13 |                  20 | Against    | For        |
-| 77 | Cutting the Pentagon's Budget is a Gift to our Enemies | 06/19/2013 |               9 |                   8 | For        | Against    |
-| 79 | The GOP must Seize the Center or Die                   | 04/17/2013 |               2 |                  14 | Against    | For        |
-
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg .tg-us36{border-color:inherit;vertical-align:top}
+.tg .tg-dvpl{border-color:inherit;text-align:right;vertical-align:top}
+</style>
+<table class="tg">
+  <tr>
+    <th class="tg-dvpl"></th>
+    <th class="tg-us36">Title</th>
+    <th class="tg-us36">Date</th>
+    <th class="tg-dvpl">Abs Change: For</th>
+    <th class="tg-dvpl">Abs Change: Against</th>
+    <th class="tg-us36">ISM Winner</th>
+    <th class="tg-us36">UDM Winner</th>
+  </tr>
+  <tr>
+    <td class="tg-dvpl">3</td>
+    <td class="tg-us36">Trigger Warning: Safe Spaces Are Dangerous</td>
+    <td class="tg-us36">06/23/2018</td>
+    <td class="tg-dvpl">-1</td>
+    <td class="tg-dvpl">10</td>
+    <td class="tg-us36">Against</td>
+    <td class="tg-us36">For</td>
+  </tr>
+  <tr>
+    <td class="tg-dvpl">7</td>
+    <td class="tg-us36">Preserve Net Neutrality: All Data is Created Equal</td>
+    <td class="tg-us36">04/17/2018</td>
+    <td class="tg-dvpl">0</td>
+    <td class="tg-dvpl">8</td>
+    <td class="tg-us36">Against</td>
+    <td class="tg-us36">For</td>
+  </tr>
+  <tr>
+    <td class="tg-dvpl">55</td>
+    <td class="tg-us36">Legalize Assisted Suicide</td>
+    <td class="tg-us36">11/03/2014</td>
+    <td class="tg-dvpl">4</td>
+    <td class="tg-dvpl">11</td>
+    <td class="tg-us36">Against</td>
+    <td class="tg-us36">For</td>
+  </tr>
+  <tr>
+    <td class="tg-dvpl">74</td>
+    <td class="tg-us36">Break up the Big Banks</td>
+    <td class="tg-us36">10/16/2013</td>
+    <td class="tg-dvpl">13</td>
+    <td class="tg-dvpl">20</td>
+    <td class="tg-us36">Against</td>
+    <td class="tg-us36">For</td>
+  </tr>
+  <tr>
+    <td class="tg-dvpl">77</td>
+    <td class="tg-us36">Cutting the Pentagon's Budget is a Gift to our Enemies</td>
+    <td class="tg-us36">06/19/2013</td>
+    <td class="tg-dvpl">9</td>
+    <td class="tg-dvpl">8</td>
+    <td class="tg-us36">For</td>
+    <td class="tg-us36">Against</td>
+  </tr>
+  <tr>
+    <td class="tg-dvpl">79</td>
+    <td class="tg-us36">The GOP must Seize the Center or Die</td>
+    <td class="tg-us36">04/17/2013</td>
+    <td class="tg-dvpl">2</td>
+    <td class="tg-dvpl">14</td>
+    <td class="tg-us36">Against</td>
+    <td class="tg-us36">For</td>
+  </tr>
+</table>
 
 $$
 \left(
