@@ -57,11 +57,11 @@ Thus the first question is whether there are cases where the UDM declares a winn
   <tr>
     <th class="tg-us36">Title</th>
     <th class="tg-us36">Date</th>
-    <th class="tg-yp4a">Pre: For</th>
-    <th class="tg-fraq">Pre: Against</th>
-    <th class="tg-yp4a">Pre: Undecided</th>
-    <th class="tg-dvpl">Abs. $\Delta$: For</th>
-    <th class="tg-dvpl">Abs. $\Delta$: Against</th>
+    <th class="tg-yp4a">Pre %: For</th>
+    <th class="tg-fraq">Pre %: Against</th>
+    <th class="tg-yp4a">Pre %: Undecided</th>
+    <th class="tg-dvpl">Abs. % $\Delta$: For</th>
+    <th class="tg-dvpl">Abs. % $\Delta$: Against</th>
     <th class="tg-us36">ISM Winner</th>
     <th class="tg-us36">UDM Winner</th>
   </tr>
