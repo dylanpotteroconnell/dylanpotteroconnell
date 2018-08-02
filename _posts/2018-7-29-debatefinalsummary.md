@@ -42,7 +42,7 @@ Looking at the results of the Intelligence Squared debates in reality, we see th
 
 The first winning metric we consider is the Intelligence Squared Metric (ISM), which measures shift in absolute percentage of support. We next consider the Undisputed Metric (UDM), which uses the proportional switching outlined above, and only assigns a winner when one side *both* convinces a greater proportion of Undecided voters to join their side, as well as a greater proportion of the other side to switch their opinion. In cases when these do not agree, no winner is declared.
 
-Thus the first question is whether there are cases where the UDM declares a winner which is the reverse of the ISM, like the toy example outlined above by whuber. It turns out that this is *not* an idle concern, and in fact there have been five debates with this conflicting result.
+Thus the first question is whether there are cases where the UDM declares a winner which is the reverse of the ISM, like the toy example outlined above by whuber. It turns out that this is *not* an idle concern, and in fact there have been six debates with this conflicting result.
 
 <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;}
@@ -53,16 +53,14 @@ Thus the first question is whether there are cases where the UDM declares a winn
 </style>
 <table class="tg">
   <tr>
-    <th class="tg-dvpl"></th>
     <th class="tg-us36">Title</th>
     <th class="tg-us36">Date</th>
-    <th class="tg-dvpl">Abs Change: For</th>
+    <th class="tg-dvpl">Abs $\delta$: For</th>
     <th class="tg-dvpl">Abs Change: Against</th>
     <th class="tg-us36">ISM Winner</th>
     <th class="tg-us36">UDM Winner</th>
   </tr>
   <tr>
-    <td class="tg-dvpl">3</td>
     <td class="tg-us36">Trigger Warning: Safe Spaces Are Dangerous</td>
     <td class="tg-us36">06/23/2018</td>
     <td class="tg-dvpl">-1</td>
@@ -71,7 +69,6 @@ Thus the first question is whether there are cases where the UDM declares a winn
     <td class="tg-us36">For</td>
   </tr>
   <tr>
-    <td class="tg-dvpl">7</td>
     <td class="tg-us36">Preserve Net Neutrality: All Data is Created Equal</td>
     <td class="tg-us36">04/17/2018</td>
     <td class="tg-dvpl">0</td>
@@ -80,7 +77,6 @@ Thus the first question is whether there are cases where the UDM declares a winn
     <td class="tg-us36">For</td>
   </tr>
   <tr>
-    <td class="tg-dvpl">55</td>
     <td class="tg-us36">Legalize Assisted Suicide</td>
     <td class="tg-us36">11/03/2014</td>
     <td class="tg-dvpl">4</td>
@@ -89,7 +85,6 @@ Thus the first question is whether there are cases where the UDM declares a winn
     <td class="tg-us36">For</td>
   </tr>
   <tr>
-    <td class="tg-dvpl">74</td>
     <td class="tg-us36">Break up the Big Banks</td>
     <td class="tg-us36">10/16/2013</td>
     <td class="tg-dvpl">13</td>
@@ -98,7 +93,6 @@ Thus the first question is whether there are cases where the UDM declares a winn
     <td class="tg-us36">For</td>
   </tr>
   <tr>
-    <td class="tg-dvpl">77</td>
     <td class="tg-us36">Cutting the Pentagon's Budget is a Gift to our Enemies</td>
     <td class="tg-us36">06/19/2013</td>
     <td class="tg-dvpl">9</td>
@@ -107,7 +101,6 @@ Thus the first question is whether there are cases where the UDM declares a winn
     <td class="tg-us36">Against</td>
   </tr>
   <tr>
-    <td class="tg-dvpl">79</td>
     <td class="tg-us36">The GOP must Seize the Center or Die</td>
     <td class="tg-us36">04/17/2013</td>
     <td class="tg-dvpl">2</td>
@@ -116,6 +109,10 @@ Thus the first question is whether there are cases where the UDM declares a winn
     <td class="tg-us36">For</td>
   </tr>
 </table>
+
+This is not surprising when the absolute percentage changes are so close (such as in “Cutting the Pentagon’s budget…”), but the other debates show some wildly divergent results. We even see an example of whuber’s hypothesized situation. In the “Trigger Warnings” debate on 06/23/2018, we see the For camp lose support, the Against camp gain support, and yet we see that the For camp was declared the winner by the UDM. We examine 
+
+
 
 $$
 \left(
