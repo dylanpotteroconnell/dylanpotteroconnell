@@ -12,13 +12,13 @@ It turns out that Intelligence Squared doesn’t just measure the change in supp
 
 ### What does it mean to “win” a debate?
 
-Intelligence Squared declares their nominal winner with a simple metric, measuring whether the For or Against side had the largest absolute percentage point shift in support from the pre debate to the post debate audience poll. Thus, if the For side originally had 40% support and the Against side 35% support before the debate, and after the debate the For side had 45% support and the Against side had 43% support, the 8 percentage point increase of the Against side trumps the 5 percentage point increase of the For side, and the Against side wins the night.
+Intelligence Squared declares their nominal winner with a simple metric, measuring whether the For or Against side had the largest absolute percentage point shift in support from the pre debate to the post debate audience poll. Thus, if the For side originally had 40% support and the Against side 35% support before the debate, and after the debate the For side had 45% support and the Against side had 43% support, the 8 percentage point increase of the Against side trumps the 5 percentage point increase of the For side, and the Against side wins the night. We will refer to this method for determining a victory as the ISM (Intelligence Squared Metric).
 
-The problem with this metric stems from the fact  that *there are a variety of ways that opinions could shift between the three camps*. This is related to both its usage of absolute percentage point change (with no reference to the relative switch), as well as the presence of the undecided voters.
+The problem with this approach stems from the fact  that *there are a variety of ways that opinions could shift between the three camps*. This is related to both its usage of absolute percentage point change (with no reference to the relative switch), as well as the presence of the undecided voters.
 
-I stumbled upon [this](https://stats.stackexchange.com/a/94742) excellent post by whuber on StackExchange. I have the pleasure of knowing whuber in person, and in characteristic fashion he gives a thorough and insightful analysis of the ways in which we can have different shifts in support (among the different groups) for the same absolute result, in ways that make determining the winner quite difficult. We cite a simple example proposed by whuber in this post.
+I stumbled upon [this](https://stats.stackexchange.com/a/94742) excellent post by *whuber* on StackExchange. I have the pleasure of knowing *whuber* in person, and in characteristic fashion he gives a thorough and insightful analysis of the ways in which we can have different shifts in support (among the different groups) for the same absolute result, in ways that make determining the winner quite difficult. We cite a simple example proposed by *whuber* in this post.
 
-Consider a situation where originally 20% are For, 60% are Against, and 20% are undecided (we will write this as a vector $(.2, .6, .2)$. After the debate, the vector of support is $(.3, .4, .3)$. Under the ISM, this is a clear and decisive win for the For side, as they gained 10 percentage points of support, while the Against side lost 20 percentage points. However, there are a variety of between-group opinion switches that could lead to this result. whuber suggests that we write these between-group switches in a 3x3 transition matrix, where the $ij$th element represents the percent of the original supporters for the $i$th camp before the debate are supporters of the $j$th camp after the debate (with For as 1, Against as 2, and Undecided as 3). Then, this represents a plausible transition matrix for our final result.
+Consider a situation where originally 20% are For, 60% are Against, and 20% are undecided (we will write this as a vector $(.2, .6, .2)$). After the debate, the vector of support is $(.3, .4, .3)$. Under the ISM, this is a clear and decisive win for the For side, as they gained 10 percentage points of support, while the Against side lost 20 percentage points. However, there are a variety of between-group opinion switches that could lead to this result. *whuber* suggests that we write these between-group switches in a 3x3 transition matrix, where the $ij$th element represents the percent of the original supporters for the $i$th camp before the debate are supporters of the $j$th camp after the debate (with For as 1, Against as 2, and Undecided as 3). Then, this represents a plausible transition matrix for our final result.
 
 $$
 \mathbb{A} = \left(
@@ -30,11 +30,11 @@ $$
 \right).
 $$
 
-As whuber explains,
+As *whuber* explains,
 
 > Here, 36% of the “Fors" changed to the other side while only 29% of the “Against" changed to the opposite opinion. Moreover, slightly more of the undecideds (36%) vs 32%) came out "against" rather than for. Although their numbers in this audience decreased, we have a situation (reminiscent of Simpson's Paradox) in which the “Against" faction clearly won the debate!
 
-We have a possible outcome where Intelligence Squared would declare the “For” side a decisive winner, but in terms of percentage shifts, the “Against” side was more persuasive at *both* convincing Undecideds to join their side, and convincing those with a prior opinion to change their viewpoint. This clarifies the challenge inherent in determining the winner of a debate. When one side is initially quite unpopular, they have a larger population of possible voters that they can woo, which makes their proportional gains much higher in absolute terms. There’s certainly a plausible argument that absolute shifts in support should be the most important factor in determining a winner, but this does make the situation more complex. And it gets even messier in cases where  the sub-group switches don’t necessarily agree. We might see one side sway a much larger proportion of the Undecided voters, while being less successful at convincing those from the other side to switch. This could leave us without a conclusive winner.
+We have a possible outcome where Intelligence Squared would declare the “For” side a decisive winner, but in terms of percentage shifts, the “Against” side was more persuasive at both convincing Undecideds to join their side, *and* convincing those with a prior opinion to change their viewpoint. This clarifies the challenge inherent in determining the winner of a debate. When one side is initially quite unpopular, they have a larger population of possible voters that they can woo, which makes their proportional gains much higher in absolute terms. There’s certainly a plausible argument that absolute shifts in support should be the most important factor in determining a winner, but this does make the situation more complex. And it gets even messier in cases where  the sub-group switches don’t necessarily agree. We might see one side sway a much larger proportion of the Undecided voters, while being less successful at convincing those from the other side to switch. This could leave us without a conclusive winner.
 
 ### How has this worked in practice?
 
@@ -42,7 +42,7 @@ Looking at the results of the Intelligence Squared debates in reality, we see th
 
 The first winning metric we consider is the Intelligence Squared Metric (ISM), which measures shift in absolute percentage of support. We next consider the Undisputed Metric (UDM), which uses the proportional switching outlined above, and only assigns a winner when one side *both* convinces a greater proportion of Undecided voters to join their side, as well as a greater proportion of the other side to switch their opinion. In cases when these do not agree, no winner is declared.
 
-Thus the first question is whether there are cases where the UDM declares a winner which is the reverse of the ISM, like the toy example outlined above by whuber. It turns out that this is *not* an idle concern, and in fact there have been six debates with this conflicting result.
+Thus the first question is whether there are cases where the UDM declares a winner which is the reverse of the ISM, like the toy example outlined above by *whuber*. It turns out that this is *not* an idle concern, and in fact there have been six debates with this conflicting result.
 
 <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;border-color:#ccc;}
@@ -133,7 +133,7 @@ Thus the first question is whether there are cases where the UDM declares a winn
   </tr>
 </table>
 
-This is not surprising when the absolute percentage changes are so close (such as in “Cutting the Pentagon’s budget…”), but the other debates show some wildly divergent results. We even see an example of whuber’s hypothesized situation. In the “Trigger Warnings” debate on 06/23/2018, we see the For camp lose support, the Against camp gain support, and yet we see that the For camp was declared the winner by the UDM. The transition matrix for this debate is shown here
+This is not surprising when the absolute percentage changes are so close (such as in “Cutting the Pentagon’s budget…”), but the other debates show some wildly divergent results. We even see an example of *whuber*’s hypothesized situation. In the “Trigger Warnings” debate on 06/23/2018, we see the For camp lose support, the Against camp gain support, and yet we see that the For camp was declared the winner by the UDM. The transition matrix for this debate is shown here
 
 
 $$
@@ -150,3 +150,8 @@ The For camp was able to lure 39% of the Undecided voters, compared to only 33% 
 
 This is a perfect example of the issue, because it feels fundamentally wrong to declare the winner of the debate to be a side that *lost* popularity during the course of the night. This cousin of Simpson’s Paradox defies our intuition, where we want relative and absolute changes to point in the same direction. I think there’s an argument for both sides. The issue with using the UDM (with subgroup proportional shifts) is that there’s an inherent expectation that a debate will shift opinions towards the center. If one group starts overwhelmingly popular, and both sides sway the proportional amount of people to their side, then that side will tend to lose share. It doesn’t make much sense that we would expect any evenly matched debate to bring public opinion towards a 50/50 split, but a series of dead even debates (as measured by the UDM) would push the audience towards that equilibrium point. And yet, we think of the goal of debates as being one of persuasion. And so it makes little sense to declare one side the winner because they had a larger possible audience to persuade, even if their marginal rate of persuasion was inferior.
 
+### Are there obvious issues in the original metric?
+
+One way to compare the metrics is whether they are biased in certain starting situations. For example, does the original metric favored by Intelligence Squared tend to consistently declare the originally unpopular side to be the winner, as seems plausible from the examples above? Or are there confounding factors that cancel out this bias? 
+
+Cursory checks of the dataset don’t reveal any glaring issues with the ISM winner being closely related to pre debate factors. 

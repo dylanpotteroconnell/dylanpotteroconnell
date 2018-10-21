@@ -4,7 +4,7 @@ mathjax: true
 title: Winning a Debate&#58; Scraping the Intelligence Squared Dataset
 ---
 
-In the last [post](https://dylanpotteroconnell.github.io/debateresults/), I gave an overview of some of the challenges in picking the winner of a debate, and how the Intelligence Squared podcast provides us with a dataset that we can use to examine both this and how opinion shifts in general.
+This is a brief companion to the [post](https://dylanpotteroconnell.github.io/debatefinalsummary/) analyzing the methods of assigning a winner to a debate, using the Intelligence Squared dataset. I will briefly outline here how I assemble that dataset, for trasparency.
 
 ### Compiling the Pages
 
