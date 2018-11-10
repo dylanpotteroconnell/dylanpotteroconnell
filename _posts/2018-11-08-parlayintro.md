@@ -16,7 +16,7 @@ When it comes to betting, it's worth noting that Expected Value is the *only* vi
 
 # Numbers behind betting
 
-In America, bets are usually denoted using a $\pmX-$hundred system. A $+200$ line says that if you bet $\$100$ and win, you receive back \$200 plus your original bet.
+In America, bets are usually denoted using a $\pm X-$hundred system. A $+200$ line says that if you bet $100 and win, you receive back \$200 plus your original bet.
 
 roll two 6 sided dice. events: sum to at least 11, and first die is a 6.
 
