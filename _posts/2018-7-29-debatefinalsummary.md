@@ -136,7 +136,7 @@ Thus the first question is whether there are cases where the UDM declares a winn
 This is not surprising when the absolute percentage changes are so close (such as in “Cutting the Pentagon’s budget…”), but the other debates show some wildly divergent results. We even see an example of *whuber*’s hypothesized situation. In the “Trigger Warnings” debate on 06/23/2018, we see the For camp lose support, the Against camp gain support, and yet we see that the For camp was declared the winner by the UDM. The transition matrix for this debate is shown here
 
 
-\begin{equation*}
+$$
 \text{Trigger Warnings Debate: }\left(
 \begin{array}{ccc}
 0.67 & 0.44 & 0.39 \\ 
@@ -144,15 +144,18 @@ This is not surprising when the absolute percentage changes are so close (such a
 0.07 & 0.00 & 0.28 \\ 
 \end{array}
 \right).
-\end{equation*}
+$$
 
 The For camp was able to lure 39% of the Undecided voters, compared to only 33% by the Against camp. And the For side was able to convince 44% of the Against camp to change their minds, while the Against camp convinced only 26% of the For camp to swap. And yet the For camp *lost* support, while the Against camp gained support. This can easily be explained by the initial disparity in popularity. The For side began with 57% of the vote, so while they convinced a larger proportion of Undecided and Against voters to change their view, they had a minority of the audience who were even available to sway.
 
 This is a perfect example of the issue, because it feels fundamentally wrong to declare the winner of the debate to be a side that *lost* popularity during the course of the night. This cousin of Simpson’s Paradox defies our intuition, where we want relative and absolute changes to point in the same direction. I think there’s an argument for both sides. The issue with using the UDM (with subgroup proportional shifts) is that there’s an inherent expectation that a debate will shift opinions towards the center. If one group starts overwhelmingly popular, and both sides sway the proportional amount of people to their side, then that side will tend to lose share. It doesn’t make much sense that we would expect any evenly matched debate to bring public opinion towards a 50/50 split, but a series of dead even debates (as measured by the UDM) would push the audience towards that equilibrium point. And yet, we think of the goal of debates as being one of persuasion. And so it makes little sense to declare one side the winner because they had a larger possible audience to persuade, even if their marginal rate of persuasion was inferior.
+
 <!---
 ### Are there obvious issues in the original metric?
 
 One way to compare the metrics is whether they are biased in certain starting situations. For example, does the original metric favored by Intelligence Squared tend to consistently declare the originally unpopular side to be the winner, as seems plausible from the examples above? Or are there confounding factors that cancel out this bias? 
 
 Cursory checks of the dataset don’t reveal any glaring issues with the ISM winner being closely related to pre debate factors. 
+
 -->
+
