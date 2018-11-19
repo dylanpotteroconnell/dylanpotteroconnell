@@ -20,7 +20,7 @@ I stumbled upon [this](https://stats.stackexchange.com/a/94742) excellent post b
 
 Consider a situation where originally 20% are For, 60% are Against, and 20% are undecided (we will write this as a vector $(.2, .6, .2)$). After the debate, the vector of support is $(.3, .4, .3)$. Under the ISM, this is a clear and decisive win for the For side, as they gained 10 percentage points of support, while the Against side lost 20 percentage points. However, there are a variety of between-group opinion switches that could lead to this result. *whuber* suggests that we write these between-group switches in a 3x3 transition matrix, where the $ij$th element represents the percent of the original supporters for the $i$th camp before the debate are supporters of the $j$th camp after the debate (with For as 1, Against as 2, and Undecided as 3). Then, this represents a plausible transition matrix for our final result.
 
-\begin{equation*}
+$$
 \mathbb{A} = \left(
 \begin{array}{ccc}
  0.32 & 0.29 & 0.32 \\
@@ -28,7 +28,7 @@ Consider a situation where originally 20% are For, 60% are Against, and 20% are 
  0.32 & 0.29 & 0.32 \\
 \end{array}
 \right).
-\end{equation*}
+$$
 
 As *whuber* explains,
 
@@ -136,7 +136,7 @@ Thus the first question is whether there are cases where the UDM declares a winn
 This is not surprising when the absolute percentage changes are so close (such as in “Cutting the Pentagon’s budget…”), but the other debates show some wildly divergent results. We even see an example of *whuber*’s hypothesized situation. In the “Trigger Warnings” debate on 06/23/2018, we see the For camp lose support, the Against camp gain support, and yet we see that the For camp was declared the winner by the UDM. The transition matrix for this debate is shown here
 
 
-$$
+\begin{equation*}
 \text{Trigger Warnings Debate: }\left(
 \begin{array}{ccc}
 0.67 & 0.44 & 0.39 \\ 
@@ -144,7 +144,7 @@ $$
 0.07 & 0.00 & 0.28 \\ 
 \end{array}
 \right).
-$$
+\end{equation*}
 
 The For camp was able to lure 39% of the Undecided voters, compared to only 33% by the Against camp. And the For side was able to convince 44% of the Against camp to change their minds, while the Against camp convinced only 26% of the For camp to swap. And yet the For camp *lost* support, while the Against camp gained support. This can easily be explained by the initial disparity in popularity. The For side began with 57% of the vote, so while they convinced a larger proportion of Undecided and Against voters to change their view, they had a minority of the audience who were even available to sway.
 
