@@ -1,6 +1,6 @@
 ---
 layout: post
-title: World Cup Elo Ratings&#58; Results of Toy Model for Group Stage
+title: World Cup Elo Part 3&#58; Results of Toy Model for Group Stage
 ---
 
 *Part 1 can be found [here](https://dylanpotteroconnell.github.io/worldcup/), and Part 2 [here]()https://dylanpotteroconnell.github.io/worldcup2/).*
