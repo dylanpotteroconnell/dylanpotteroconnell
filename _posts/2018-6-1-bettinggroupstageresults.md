@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Elo Ratings&#58; Results of Toy Model for Group Stage
+title: World Cup Elo Ratings&#58; Results of Toy Model for Group Stage
 ---
 
 Over the winter, I built a straightforward Elo rating system to model soccer/football national teams during the World Cup. Elo rating systems are used all around us, but most people never bother to delve into the details of how they are constructed, which makes it difficult to draw precise inferences, so this is a useful exercise. Now that the group stage of the 2018 World Cup has wrapped up, I'll take a quick look at how the Elo rating system performed if it were used as a betting system..
@@ -21,6 +21,555 @@ Our simple betting game goes as follows. For each of the 48 games played in the 
 
 
 ### Results
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg .tg-0lax{text-align:left;vertical-align:top}
+</style>
+<table class="tg">
+  <tr>
+    <th class="tg-0lax">Team 1</th>
+    <th class="tg-0lax">Team 2</th>
+    <th class="tg-0lax">Model: P(Win 1)</th>
+    <th class="tg-0lax">Model: P(Draw)</th>
+    <th class="tg-0lax">Model: P(Win 2)</th>
+    <th class="tg-0lax">Line: Win 1</th>
+    <th class="tg-0lax">Line: Tie</th>
+    <th class="tg-0lax">Line: Win 3</th>
+    <th class="tg-0lax">Profit</th>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Russia</td>
+    <td class="tg-0lax">Saudi Arabia</td>
+    <td class="tg-0lax">0.562</td>
+    <td class="tg-0lax">0.233</td>
+    <td class="tg-0lax">0.206</td>
+    <td class="tg-0lax">-217</td>
+    <td class="tg-0lax">334</td>
+    <td class="tg-0lax">807</td>
+    <td class="tg-0lax">-100</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Russia</td>
+    <td class="tg-0lax">Egypt</td>
+    <td class="tg-0lax">0.566</td>
+    <td class="tg-0lax">0.231</td>
+    <td class="tg-0lax">0.203</td>
+    <td class="tg-0lax">-105</td>
+    <td class="tg-0lax">257</td>
+    <td class="tg-0lax">330</td>
+    <td class="tg-0lax">95.2</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Russia</td>
+    <td class="tg-0lax">Uruguay</td>
+    <td class="tg-0lax">0.462</td>
+    <td class="tg-0lax">0.262</td>
+    <td class="tg-0lax">0.276</td>
+    <td class="tg-0lax">193</td>
+    <td class="tg-0lax">208</td>
+    <td class="tg-0lax">177</td>
+    <td class="tg-0lax">-100</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Saudi Arabia</td>
+    <td class="tg-0lax">Egypt</td>
+    <td class="tg-0lax">0.36</td>
+    <td class="tg-0lax">0.289</td>
+    <td class="tg-0lax">0.351</td>
+    <td class="tg-0lax">445</td>
+    <td class="tg-0lax">263</td>
+    <td class="tg-0lax">-130</td>
+    <td class="tg-0lax">445</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Saudi Arabia</td>
+    <td class="tg-0lax">Uruguay</td>
+    <td class="tg-0lax">0.278</td>
+    <td class="tg-0lax">0.262</td>
+    <td class="tg-0lax">0.46</td>
+    <td class="tg-0lax">1700</td>
+    <td class="tg-0lax">573</td>
+    <td class="tg-0lax">-455</td>
+    <td class="tg-0lax">-100</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Egypt</td>
+    <td class="tg-0lax">Uruguay</td>
+    <td class="tg-0lax">0.274</td>
+    <td class="tg-0lax">0.261</td>
+    <td class="tg-0lax">0.465</td>
+    <td class="tg-0lax">744</td>
+    <td class="tg-0lax">309</td>
+    <td class="tg-0lax">-196</td>
+    <td class="tg-0lax">-100</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Portugal</td>
+    <td class="tg-0lax">Spain</td>
+    <td class="tg-0lax">0.307</td>
+    <td class="tg-0lax">0.273</td>
+    <td class="tg-0lax">0.421</td>
+    <td class="tg-0lax">338</td>
+    <td class="tg-0lax">227</td>
+    <td class="tg-0lax">104</td>
+    <td class="tg-0lax">-100</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Portugal</td>
+    <td class="tg-0lax">Morocco</td>
+    <td class="tg-0lax">0.586</td>
+    <td class="tg-0lax">0.225</td>
+    <td class="tg-0lax">0.189</td>
+    <td class="tg-0lax">-143</td>
+    <td class="tg-0lax">270</td>
+    <td class="tg-0lax">504</td>
+    <td class="tg-0lax">-100</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Portugal</td>
+    <td class="tg-0lax">Iran</td>
+    <td class="tg-0lax">0.528</td>
+    <td class="tg-0lax">0.243</td>
+    <td class="tg-0lax">0.23</td>
+    <td class="tg-0lax">-167</td>
+    <td class="tg-0lax">309</td>
+    <td class="tg-0lax">539</td>
+    <td class="tg-0lax">-100</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Spain</td>
+    <td class="tg-0lax">Morocco</td>
+    <td class="tg-0lax">0.641</td>
+    <td class="tg-0lax">0.207</td>
+    <td class="tg-0lax">0.152</td>
+    <td class="tg-0lax">-278</td>
+    <td class="tg-0lax">417</td>
+    <td class="tg-0lax">927</td>
+    <td class="tg-0lax">-100</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Spain</td>
+    <td class="tg-0lax">Iran</td>
+    <td class="tg-0lax">0.587</td>
+    <td class="tg-0lax">0.225</td>
+    <td class="tg-0lax">0.188</td>
+    <td class="tg-0lax">-476</td>
+    <td class="tg-0lax">586</td>
+    <td class="tg-0lax">1832</td>
+    <td class="tg-0lax">-100</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Morocco</td>
+    <td class="tg-0lax">Iran</td>
+    <td class="tg-0lax">0.307</td>
+    <td class="tg-0lax">0.273</td>
+    <td class="tg-0lax">0.42</td>
+    <td class="tg-0lax">123</td>
+    <td class="tg-0lax">198</td>
+    <td class="tg-0lax">317</td>
+    <td class="tg-0lax">317</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">France</td>
+    <td class="tg-0lax">Australia</td>
+    <td class="tg-0lax">0.536</td>
+    <td class="tg-0lax">0.241</td>
+    <td class="tg-0lax">0.224</td>
+    <td class="tg-0lax">-370</td>
+    <td class="tg-0lax">623</td>
+    <td class="tg-0lax">944</td>
+    <td class="tg-0lax">-100</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">France</td>
+    <td class="tg-0lax">Peru</td>
+    <td class="tg-0lax">0.583</td>
+    <td class="tg-0lax">0.226</td>
+    <td class="tg-0lax">0.191</td>
+    <td class="tg-0lax">-164</td>
+    <td class="tg-0lax">287</td>
+    <td class="tg-0lax">561</td>
+    <td class="tg-0lax">-100</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">France</td>
+    <td class="tg-0lax">Denmark</td>
+    <td class="tg-0lax">0.447</td>
+    <td class="tg-0lax">0.266</td>
+    <td class="tg-0lax">0.287</td>
+    <td class="tg-0lax">106</td>
+    <td class="tg-0lax">181</td>
+    <td class="tg-0lax">434</td>
+    <td class="tg-0lax">-100</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Australia</td>
+    <td class="tg-0lax">Peru</td>
+    <td class="tg-0lax">0.407</td>
+    <td class="tg-0lax">0.276</td>
+    <td class="tg-0lax">0.316</td>
+    <td class="tg-0lax">193</td>
+    <td class="tg-0lax">254</td>
+    <td class="tg-0lax">149</td>
+    <td class="tg-0lax">-100</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Australia</td>
+    <td class="tg-0lax">Denmark</td>
+    <td class="tg-0lax">0.287</td>
+    <td class="tg-0lax">0.266</td>
+    <td class="tg-0lax">0.447</td>
+    <td class="tg-0lax">369</td>
+    <td class="tg-0lax">244</td>
+    <td class="tg-0lax">-110</td>
+    <td class="tg-0lax">-100</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Peru</td>
+    <td class="tg-0lax">Denmark</td>
+    <td class="tg-0lax">0.25</td>
+    <td class="tg-0lax">0.251</td>
+    <td class="tg-0lax">0.498</td>
+    <td class="tg-0lax">271</td>
+    <td class="tg-0lax">211</td>
+    <td class="tg-0lax">131</td>
+    <td class="tg-0lax">131</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Argentina</td>
+    <td class="tg-0lax">Iceland</td>
+    <td class="tg-0lax">0.635</td>
+    <td class="tg-0lax">0.209</td>
+    <td class="tg-0lax">0.156</td>
+    <td class="tg-0lax">-303</td>
+    <td class="tg-0lax">441</td>
+    <td class="tg-0lax">1034</td>
+    <td class="tg-0lax">-100</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Argentina</td>
+    <td class="tg-0lax">Croatia</td>
+    <td class="tg-0lax">0.516</td>
+    <td class="tg-0lax">0.246</td>
+    <td class="tg-0lax">0.237</td>
+    <td class="tg-0lax">108</td>
+    <td class="tg-0lax">229</td>
+    <td class="tg-0lax">312</td>
+    <td class="tg-0lax">-100</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Argentina</td>
+    <td class="tg-0lax">Nigeria</td>
+    <td class="tg-0lax">0.583</td>
+    <td class="tg-0lax">0.226</td>
+    <td class="tg-0lax">0.191</td>
+    <td class="tg-0lax">-200</td>
+    <td class="tg-0lax">426</td>
+    <td class="tg-0lax">499</td>
+    <td class="tg-0lax">-100</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Iceland</td>
+    <td class="tg-0lax">Croatia</td>
+    <td class="tg-0lax">0.257</td>
+    <td class="tg-0lax">0.254</td>
+    <td class="tg-0lax">0.488</td>
+    <td class="tg-0lax">341</td>
+    <td class="tg-0lax">299</td>
+    <td class="tg-0lax">-120</td>
+    <td class="tg-0lax">-100</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Iceland</td>
+    <td class="tg-0lax">Nigeria</td>
+    <td class="tg-0lax">0.309</td>
+    <td class="tg-0lax">0.274</td>
+    <td class="tg-0lax">0.417</td>
+    <td class="tg-0lax">172</td>
+    <td class="tg-0lax">210</td>
+    <td class="tg-0lax">199</td>
+    <td class="tg-0lax">199</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Croatia</td>
+    <td class="tg-0lax">Nigeria</td>
+    <td class="tg-0lax">0.428</td>
+    <td class="tg-0lax">0.271</td>
+    <td class="tg-0lax">0.301</td>
+    <td class="tg-0lax">-147</td>
+    <td class="tg-0lax">279</td>
+    <td class="tg-0lax">514</td>
+    <td class="tg-0lax">-100</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Brazil</td>
+    <td class="tg-0lax">Switzerland</td>
+    <td class="tg-0lax">0.561</td>
+    <td class="tg-0lax">0.233</td>
+    <td class="tg-0lax">0.206</td>
+    <td class="tg-0lax">-208</td>
+    <td class="tg-0lax">343</td>
+    <td class="tg-0lax">711</td>
+    <td class="tg-0lax">-100</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Brazil</td>
+    <td class="tg-0lax">Costa Rica</td>
+    <td class="tg-0lax">0.556</td>
+    <td class="tg-0lax">0.234</td>
+    <td class="tg-0lax">0.209</td>
+    <td class="tg-0lax">-476</td>
+    <td class="tg-0lax">571</td>
+    <td class="tg-0lax">1817</td>
+    <td class="tg-0lax">-100</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Brazil</td>
+    <td class="tg-0lax">Serbia</td>
+    <td class="tg-0lax">0.571</td>
+    <td class="tg-0lax">0.23</td>
+    <td class="tg-0lax">0.199</td>
+    <td class="tg-0lax">-213</td>
+    <td class="tg-0lax">368</td>
+    <td class="tg-0lax">661</td>
+    <td class="tg-0lax">-100</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Switzerland</td>
+    <td class="tg-0lax">Costa Rica</td>
+    <td class="tg-0lax">0.352</td>
+    <td class="tg-0lax">0.289</td>
+    <td class="tg-0lax">0.36</td>
+    <td class="tg-0lax">-167</td>
+    <td class="tg-0lax">270</td>
+    <td class="tg-0lax">663</td>
+    <td class="tg-0lax">-100</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Switzerland</td>
+    <td class="tg-0lax">Serbia</td>
+    <td class="tg-0lax">0.367</td>
+    <td class="tg-0lax">0.287</td>
+    <td class="tg-0lax">0.346</td>
+    <td class="tg-0lax">196</td>
+    <td class="tg-0lax">204</td>
+    <td class="tg-0lax">175</td>
+    <td class="tg-0lax">196</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Costa Rica</td>
+    <td class="tg-0lax">Serbia</td>
+    <td class="tg-0lax">0.371</td>
+    <td class="tg-0lax">0.286</td>
+    <td class="tg-0lax">0.343</td>
+    <td class="tg-0lax">436</td>
+    <td class="tg-0lax">243</td>
+    <td class="tg-0lax">-119</td>
+    <td class="tg-0lax">-100</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Germany</td>
+    <td class="tg-0lax">Mexico</td>
+    <td class="tg-0lax">0.536</td>
+    <td class="tg-0lax">0.24</td>
+    <td class="tg-0lax">0.224</td>
+    <td class="tg-0lax">-204</td>
+    <td class="tg-0lax">358</td>
+    <td class="tg-0lax">624</td>
+    <td class="tg-0lax">624</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Germany</td>
+    <td class="tg-0lax">Sweden</td>
+    <td class="tg-0lax">0.56</td>
+    <td class="tg-0lax">0.233</td>
+    <td class="tg-0lax">0.207</td>
+    <td class="tg-0lax">-213</td>
+    <td class="tg-0lax">366</td>
+    <td class="tg-0lax">664</td>
+    <td class="tg-0lax">-100</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Germany</td>
+    <td class="tg-0lax">South Korea</td>
+    <td class="tg-0lax">0.698</td>
+    <td class="tg-0lax">0.187</td>
+    <td class="tg-0lax">0.115</td>
+    <td class="tg-0lax">-588</td>
+    <td class="tg-0lax">740</td>
+    <td class="tg-0lax">1837</td>
+    <td class="tg-0lax">-100</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Mexico</td>
+    <td class="tg-0lax">Sweden</td>
+    <td class="tg-0lax">0.381</td>
+    <td class="tg-0lax">0.283</td>
+    <td class="tg-0lax">0.335</td>
+    <td class="tg-0lax">121</td>
+    <td class="tg-0lax">240</td>
+    <td class="tg-0lax">259</td>
+    <td class="tg-0lax">259</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Mexico</td>
+    <td class="tg-0lax">South Korea</td>
+    <td class="tg-0lax">0.547</td>
+    <td class="tg-0lax">0.237</td>
+    <td class="tg-0lax">0.216</td>
+    <td class="tg-0lax">-143</td>
+    <td class="tg-0lax">281</td>
+    <td class="tg-0lax">473</td>
+    <td class="tg-0lax">-100</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Sweden</td>
+    <td class="tg-0lax">South Korea</td>
+    <td class="tg-0lax">0.523</td>
+    <td class="tg-0lax">0.244</td>
+    <td class="tg-0lax">0.233</td>
+    <td class="tg-0lax">127</td>
+    <td class="tg-0lax">204</td>
+    <td class="tg-0lax">293</td>
+    <td class="tg-0lax">127</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Belgium</td>
+    <td class="tg-0lax">Panama</td>
+    <td class="tg-0lax">0.608</td>
+    <td class="tg-0lax">0.218</td>
+    <td class="tg-0lax">0.174</td>
+    <td class="tg-0lax">-455</td>
+    <td class="tg-0lax">577</td>
+    <td class="tg-0lax">1662</td>
+    <td class="tg-0lax">-100</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Belgium</td>
+    <td class="tg-0lax">Tunisia</td>
+    <td class="tg-0lax">0.488</td>
+    <td class="tg-0lax">0.254</td>
+    <td class="tg-0lax">0.258</td>
+    <td class="tg-0lax">-303</td>
+    <td class="tg-0lax">419</td>
+    <td class="tg-0lax">1104</td>
+    <td class="tg-0lax">-100</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Belgium</td>
+    <td class="tg-0lax">England</td>
+    <td class="tg-0lax">0.309</td>
+    <td class="tg-0lax">0.274</td>
+    <td class="tg-0lax">0.418</td>
+    <td class="tg-0lax">272</td>
+    <td class="tg-0lax">184</td>
+    <td class="tg-0lax">147</td>
+    <td class="tg-0lax">272</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Panama</td>
+    <td class="tg-0lax">Tunisia</td>
+    <td class="tg-0lax">0.259</td>
+    <td class="tg-0lax">0.255</td>
+    <td class="tg-0lax">0.486</td>
+    <td class="tg-0lax">337</td>
+    <td class="tg-0lax">278</td>
+    <td class="tg-0lax">-114</td>
+    <td class="tg-0lax">-100</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Panama</td>
+    <td class="tg-0lax">England</td>
+    <td class="tg-0lax">0.14</td>
+    <td class="tg-0lax">0.201</td>
+    <td class="tg-0lax">0.659</td>
+    <td class="tg-0lax">1773</td>
+    <td class="tg-0lax">548</td>
+    <td class="tg-0lax">-455</td>
+    <td class="tg-0lax">-100</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Tunisia</td>
+    <td class="tg-0lax">England</td>
+    <td class="tg-0lax">0.216</td>
+    <td class="tg-0lax">0.237</td>
+    <td class="tg-0lax">0.547</td>
+    <td class="tg-0lax">755</td>
+    <td class="tg-0lax">323</td>
+    <td class="tg-0lax">-204</td>
+    <td class="tg-0lax">-100</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Poland</td>
+    <td class="tg-0lax">Senegal</td>
+    <td class="tg-0lax">0.397</td>
+    <td class="tg-0lax">0.279</td>
+    <td class="tg-0lax">0.324</td>
+    <td class="tg-0lax">152</td>
+    <td class="tg-0lax">206</td>
+    <td class="tg-0lax">233</td>
+    <td class="tg-0lax">233</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Poland</td>
+    <td class="tg-0lax">Colombia</td>
+    <td class="tg-0lax">0.204</td>
+    <td class="tg-0lax">0.232</td>
+    <td class="tg-0lax">0.563</td>
+    <td class="tg-0lax">249</td>
+    <td class="tg-0lax">246</td>
+    <td class="tg-0lax">121</td>
+    <td class="tg-0lax">121</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Poland</td>
+    <td class="tg-0lax">Japan</td>
+    <td class="tg-0lax">0.314</td>
+    <td class="tg-0lax">0.276</td>
+    <td class="tg-0lax">0.411</td>
+    <td class="tg-0lax">171</td>
+    <td class="tg-0lax">215</td>
+    <td class="tg-0lax">195</td>
+    <td class="tg-0lax">-100</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Senegal</td>
+    <td class="tg-0lax">Colombia</td>
+    <td class="tg-0lax">0.179</td>
+    <td class="tg-0lax">0.221</td>
+    <td class="tg-0lax">0.6</td>
+    <td class="tg-0lax">419</td>
+    <td class="tg-0lax">282</td>
+    <td class="tg-0lax">-132</td>
+    <td class="tg-0lax">75.8</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Senegal</td>
+    <td class="tg-0lax">Japan</td>
+    <td class="tg-0lax">0.283</td>
+    <td class="tg-0lax">0.264</td>
+    <td class="tg-0lax">0.452</td>
+    <td class="tg-0lax">165</td>
+    <td class="tg-0lax">199</td>
+    <td class="tg-0lax">221</td>
+    <td class="tg-0lax">-100</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Colombia</td>
+    <td class="tg-0lax">Japan</td>
+    <td class="tg-0lax">0.512</td>
+    <td class="tg-0lax">0.248</td>
+    <td class="tg-0lax">0.24</td>
+    <td class="tg-0lax">-112</td>
+    <td class="tg-0lax">234</td>
+    <td class="tg-0lax">411</td>
+    <td class="tg-0lax">411</td>
+  </tr>
+</table>
+
 
 | Team 1       | Team 2       | Model: P(Win 1) | Model: P(Draw) | Model: P(Win 2) | Line: Win 1 | Line: Tie | Line: Win 3 | Profit |
 |--------------|--------------|-----------------|----------------|-----------------|-------------|-----------|-------------|--------|
