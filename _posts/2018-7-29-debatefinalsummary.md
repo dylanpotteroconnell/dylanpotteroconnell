@@ -158,4 +158,6 @@ One way to compare the metrics is whether they are biased in certain starting si
 Cursory checks of the dataset don’t reveal any glaring issues with the ISM winner being closely related to pre debate factors. 
 
 -->
+![OriginalResults]({{ "/images/IQ2_winnerorigresults.pdf"}})
 
+![UDMResults]({{ "/images/IQ2_winnerUDMresults.pdf"}})
