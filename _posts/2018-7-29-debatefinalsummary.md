@@ -150,14 +150,19 @@ The For camp was able to lure 39% of the Undecided voters, compared to only 33% 
 
 This is a perfect example of the issue, because it feels fundamentally wrong to declare the winner of the debate to be a side that *lost* popularity during the course of the night. This cousin of Simpson’s Paradox defies our intuition, where we want relative and absolute changes to point in the same direction. I think there’s an argument for both sides. The issue with using the UDM (with subgroup proportional shifts) is that there’s an inherent expectation that a debate will shift opinions towards the center. If one group starts overwhelmingly popular, and both sides sway the proportional amount of people to their side, then that side will tend to lose share. It doesn’t make much sense that we would expect any evenly matched debate to bring public opinion towards a 50/50 split, but a series of dead even debates (as measured by the UDM) would push the audience towards that equilibrium point. And yet, we think of the goal of debates as being one of persuasion. And so it makes little sense to declare one side the winner because they had a larger possible audience to persuade, even if their marginal rate of persuasion was inferior.
 
-<!---
 ### Are there obvious issues in the original metric?
+
+There is no singular way to measure the efficacy of these metrics, and it ultimately comes down to our subjective intuition about what it means to "win" a debate. However, we can reasonably agree on some criteria that we intuitively find "fair". Generally, we want a debate to be a plausibly even playing field from the start. An even more intuitive metric would simply be the popularity of each motion after the debate (which we refer to as the Final Popularity [FP] metric), but we reject this approach because it so obviously favors the side that is initially popular with the audience. It's then worth it to consider whether the ISM is biased in ways that clash with our intuition.
+
+The most obvious plausible bias is that of the initial popularity of each position. In fact, this is why we do not simply use the FP metric, so it is perhaps instructive to consider what such bias looks like.
+
+
+![OriginalResults]({{ "/images/IQ2_FPresults.png"}})
 
 One way to compare the metrics is whether they are biased in certain starting situations. For example, does the original metric favored by Intelligence Squared tend to consistently declare the originally unpopular side to be the winner, as seems plausible from the examples above? Or are there confounding factors that cancel out this bias? 
 
 Cursory checks of the dataset don’t reveal any glaring issues with the ISM winner being closely related to pre debate factors. 
 
--->
 ![OriginalResults]({{ "/images/IQ2_winnerorigresults.png"}})
 
 ![UDMResults]({{ "/images/IQ2_winnerUDMresults.png"}})
