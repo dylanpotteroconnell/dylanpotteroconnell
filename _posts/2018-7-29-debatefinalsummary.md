@@ -152,17 +152,21 @@ This is a perfect example of the issue, because it feels fundamentally wrong to 
 
 ### Are there obvious issues in the original metric?
 
-There is no singular way to measure the efficacy of these metrics, and it ultimately comes down to our subjective intuition about what it means to "win" a debate. However, we can reasonably agree on some criteria that we intuitively find "fair". Generally, we want a debate to be a plausibly even playing field from the start. An even more intuitive metric would simply be the popularity of each motion after the debate (which we refer to as the Final Popularity [FP] metric), but we reject this approach because it so obviously favors the side that is initially popular with the audience. It's then worth it to consider whether the ISM is biased in ways that clash with our intuition.
+There is no singular way to measure the efficacy of these metrics, and it ultimately comes down to our subjective intuition about what it means to "win" a debate. However, we can reasonably agree on some criteria that we intuitively find "fair". Generally, we want a debate to be a plausibly even playing field from the start. An even more intuitive metric would simply be the popularity of each motion after the debate (which we refer to as the Final Popularity Metric [FPM]), but we reject this approach because it so obviously favors the side that is initially popular with the audience. It's then worth it to consider whether the ISM is biased in ways that clash with our intuition.
 
-The most obvious plausible bias is that of the initial popularity of each position. In fact, this is why we do not simply use the FP metric, so it is perhaps instructive to consider what such bias looks like.
-
+The most obvious plausible bias is that of the initial popularity of each position. In fact, this is why we do not simply use the FPM , so it is perhaps instructive to consider what such bias looks like. We plot the initial popularity of the For and Against positions below, and use color to denote the final winner by the FPM (i.e. which position was ultimately more popular with the audience). Exactly as we'd expect, there is a heavy bias to the initial starting positions. There are a few instances where a particularly large swing allows for the initially unfavorable position to pull out a win, but generally the winner is determined simply by initial popularity, and the processs of the debate itself is largely irrelevant.
 
 ![OriginalResults]({{ "/images/IQ2_FPresults.png"}})
 
-One way to compare the metrics is whether they are biased in certain starting situations. For example, does the original metric favored by Intelligence Squared tend to consistently declare the originally unpopular side to be the winner, as seems plausible from the examples above? Or are there confounding factors that cancel out this bias? 
-
-Cursory checks of the dataset don’t reveal any glaring issues with the ISM winner being closely related to pre debate factors. 
+When we consider the same plot colored by the standard ISM results, we see a much more promising picture. On first glance, this adjustment does a plausible job of removing the bias from initial popularity. We theorized that the ISM might be punishing to sides that begin with overwhelming popularity, becuase they have so many fewer people that they can convert to their side (and an increase from 90 to 95 percent popularity might only be 5 percentage points, but represents a massive 50% decrease in those who don't support that side). However, in practice, most positions start at a popularity between 20% and 50%, so those extreme examples just aren't as concerning. And within that range, the naked eye doesn't detect any overwhelming patterns of bias.
 
 ![OriginalResults]({{ "/images/IQ2_winnerorigresults.png"}})
 
+One plausible trend that might stand out lies in the bottom right of the chart, where we do note that debates with an initially extremely high For share tended to be won by the Against side. Of the seven debates where the For side began with at least 60% vote share, the Against side won six contests and For won only one. This is a very small sample, but it does fit our intuition, and thus the lack of bias might simply stem from the fact that it is only observed in the extreme starting positions, which occur rarely. We do note that the reverse extreme (where the Against side has initally dominant popularity) does not show any such obvious trend.
+
+
+![PartitionVoteShare]({{ "/images/IQ2_partitionvotechange.png"}})
+
 ![UDMResults]({{ "/images/IQ2_winnerUDMresults.png"}})
+
+
