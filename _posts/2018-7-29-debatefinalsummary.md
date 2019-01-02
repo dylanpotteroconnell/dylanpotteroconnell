@@ -189,7 +189,7 @@ It is of course interesting to consider other metrics that one could use. Outlin
 
 ![UDMResults]({{ "/images/IQ2_winnerUDMresults.png"}})
 
-Similar to the ISM, under the UDM it seems the initial popularities are overly determinative of the final result. But we do observe something of a reverse trend: if an initial side has at least 50% share of the starting vote, now they nearly always win.
+Similar to the ISM, under the UDM it seems the initial popularities are overly determinative of the final result. But we do observe something of a reverse trend: if an initial side has at least 50% share of the starting vote, now they nearly always win. We again break down this effect by considering the voting shifts for debates binned by their initial For vote share. Now, our object of interest is not simply the percentage point change, but a variety of changes (in this plot, we consider the proportion of 
 
 ![UDMboxplots]({{ "/images/IQ2_UDMboxplots.png"}})
 
