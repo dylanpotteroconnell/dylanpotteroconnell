@@ -177,15 +177,17 @@ The problem is that the question this answers is deceptively narrow. It cannot m
 
 In short, the Kruskal-Wallis test demonstrates the statistical significance in the difference of the distribution of these samples, but makes no claim as to why. And we have little conclusive proof that it the prior vote share of the For side that creates this disparity, it could be any number of differences between the populations that provides the root cause.  
 
-<--
+<!--
 We can stick to a nonparametric test to sidestep of our lack of reasonable assumptions, but we must keep the above concerns closely in mind during this work. This will provide a useful benchmark for the improbability of the observed result, but there will be subjective choices made in the construction of our test (as there is no singular way to formulate our hypothesis). We must simply make reasonable choices, and keep this issue in mind (an issue at the heart of any statistical test conducted after exploratory data analysis, albeit one that is significantly less concerning when the test being used is cookie cutter and not subjectively defined by the examiner). Such 
-!-->
+-->
 
 This is an obviously unsatisfying result, but in the name of intellectual honesty I hesitate to any bolder claim. Qualitatively, I do think that the sum of this analysis makes it very likely that our intuition that those with an initially high For vote share experience notable disadvantage for winning the debate under the metric used by Intelligence Squared. However, these extreme cases come up very rarely, and the ISM seems quite defensible for the purposes of the podcast.
+
+### Alternative Metrics
 
 It is of course interesting to consider other metrics that one could use. Outlined above, we consider the Undisputed Metric (UDM), which instead considers the percentage that switch between each camp during the debate. The UDM declares a winner if that side converts both a greater percentage of the other side to swap, as well a greater percentage of the Undecided camp to join theirs. In cases where there is disagreement (e.g. the For side convinces a greater proportion of Against voters to join their side than vice versa, but the Against side convinces a greater proportion of Undecided voters), the UDM simply declares that there is no clear winner. The UDM operates under a fundamentally different mindset: that what matters is not the percentage point change, but the proportion of voters who you sway. As noted above, it is perfectly possible for the UDM to declare the opposite winner to the ISM (this is particularly likely to happen in those cases where one side has initially extreme vote share). We first consider another plot of the debate result under the UDM compared to the initial For and Against vote shares.
 
 ![UDMResults]({{ "/images/IQ2_winnerUDMresults.png"}})
 
-
+Similar to the ISM, under the UDM it seems the initial popularities are overly determinative of the final result. But we do observe something of a reverse trend: if an initial side has at least 50% share of the starting vote, now they nearly always win.
 
