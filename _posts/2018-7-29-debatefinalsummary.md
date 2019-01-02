@@ -191,3 +191,5 @@ It is of course interesting to consider other metrics that one could use. Outlin
 
 Similar to the ISM, under the UDM it seems the initial popularities are overly determinative of the final result. But we do observe something of a reverse trend: if an initial side has at least 50% share of the starting vote, now they nearly always win.
 
+![UDMboxplots]({{ "/images/IQ2_UDMboxplots.png"}})
+
