@@ -6,7 +6,7 @@ title: A Gentle Introduction to Parlays and Independence
 
 > Betting parlays of positively correlated events will generally be profitable. 
 
-This statement is far from revolutionary, and will be obvious to those familar with the fundamentals of betting. However, I've talked to many folks with no prior experience who wanted to learn more. I thought it would be interesting and fun to write up a basic tutorial in this concept which assumes minimal background in probability (and should provide good intuition even with no mathematical foundation). This post is intended as an exercise in explaining concepts at an introductory level, and should be ignored by those who are already comfortble with the tools of probability (although many might find the 2018 election parlay opportunities of interest).
+This statement is far from revolutionary, and will be obvious to those familar with the fundamentals of betting. However, I've talked to many folks with no prior experience who wanted to learn more. I thought it would be interesting and fun to write up a basic tutorial in this concept which assumes minimal background in probability (and should provide good intuition even with no mathematical foundation). This post is intended as an exercise in explaining concepts at an introductory level, and should be ignored by those who are already comfortable with the tools of probability (although many might find the 2018 election parlay opportunities of interest).
 
 # Betting
 
